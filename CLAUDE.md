@@ -98,15 +98,21 @@ repo/session, not here, since this project only owns the standalone site.
       `gushdanskyline.com`.
 - [ ] `audit.py`'s last run (Sept 2026) flagged 50 unsplit-multi-tower, 69
       duplicate, and 67 missing-height candidates still unresolved. Of the
-      ones already spot-checked: Kalanit Towers (Kiryat Ono) and Song
-      Towers (Givat Shmuel) were confirmed genuine gaps and fixed;
-      Maslavi/Matzlawi Elite Towers, Bialik Towers, and the "U Towers"
-      numbering gap were confirmed false positives; Le'om Towers (Rishon
-      LeZion) is flagged inconclusive (thread title matches our data, but
-      a buried reply mentions a possibly different/renamed "Ha-Leom
-      towers 2×22fl" — not enough context to act on). See HANDOFF.md's
-      "Data-quality audit tool" section for full detail before re-running
-      the sweep.
+      ones already spot-checked: Kalanit Towers (Kiryat Ono), Song
+      Towers (Givat Shmuel), and Reisdor Towers (Bnei Brak) were confirmed
+      genuine gaps and fixed; Maslavi/Matzlawi Elite Towers, Bialik
+      Towers, and the "U Towers" numbering gap were confirmed false
+      positives; Le'om Towers (Rishon LeZion) is flagged inconclusive
+      (thread title matches our data, but a buried reply mentions a
+      possibly different/renamed "Ha-Leom towers 2×22fl" — not enough
+      context to act on); Ayala Towers (Beer Yaakov) is also inconclusive
+      (third-party listings suggest "2x18fl" but the thread title itself
+      doesn't confirm it). See HANDOFF.md's "Data-quality audit tool" and
+      2026-09-12 sections for full detail before re-running the sweep.
+      **Note**: SkyscraperCity now paywalls thread bodies for plain
+      WebFetch (redirects to tollbit.skyscrapercity.com, HTTP 402) — use
+      Claude in Chrome (the user's logged-in browser) instead for any
+      thread cross-checks, since it still gets full access.
 - [ ] Long-standing flagged/ambiguous items from earlier sessions, still
       open (see HANDOFF.md for context on each): Vitania Towers,
       Ha-Umanim Towers, Lapid Towers, BSR Shaar HaYam, Yoseftal Gate

@@ -1029,3 +1029,37 @@ Dataset now at 936 rows (930 + 6 from the two splits above). ~48 more
 "unsplit multi-tower" flags, 69 duplicate flags, and 67 missing-height
 flags from this run are still unresolved — good candidates for the next
 pass.
+
+## 2026-09-12 — Reisdor Towers split; SkyscraperCity now paywalled
+
+Started working the "unsplit multi-tower" backlog from the standalone
+project's `CLAUDE.md` outstanding list. Ran into a new obstacle: plain
+`WebFetch`/`WebSearch` against `skyscrapercity.com` now redirects to
+`tollbit.skyscrapercity.com` and returns HTTP 402 (paywalled) — thread
+*bodies* are no longer readable that way, only titles via search-engine
+snippets. **Claude in Chrome (the user's real, logged-in browser) still
+gets full thread access** — use that instead of WebFetch for any future
+thread cross-checks in this project.
+
+- **Reisdor Towers (Bnei Brak)** — genuine gap, confirmed via full thread
+  (not just title) over Claude in Chrome. Thread title has progressed to
+  "2x35 FL | 1 T/O"; OP confirms two office towers on Lechi St
+  (רייסדור תקים שני מגדלי משרדים ברחוב הלח"י בבני ברק); recent page-5
+  photos show one tower fully glazed/topped and the other still under
+  construction. Only 1 row existed (id 27, 35fl, "Topped Out"). Split
+  into 2: relabeled id 27 as "(Tower 1)" (Topped Out, 35fl) and added id
+  934 as "(Tower 2)" (Under Construction, 35fl), same coordinates.
+- **Ayala Towers (Beer Yaakov)** — checked, inconclusive. Thread title
+  itself only says "18 fl | Completed" (no "2x" count), but third-party
+  office listings reference a "Building B" and search-engine summaries
+  claim "2 x 18 fl". Not confirmed against the actual thread text yet —
+  left as-is (id 63, 18fl unchanged). Worth a Claude-in-Chrome check next
+  pass.
+- **Bezalel towers (Ramat Gan)**, **Denmark Complex** and **Odis Complex**
+  (Petah Tikva) — spot-checked via search, no "2x" pattern found for any
+  of the three; likely false positives (plural/branding name for a single
+  building) or just thin forum coverage. Left as-is.
+
+Dataset now at 937 rows (936 + 1 from the Reisdor split). Still
+unresolved: ~49 more "unsplit multi-tower" flags, 69 duplicate flags, and
+67 missing-height flags — see `CLAUDE.md`'s Outstanding section.
