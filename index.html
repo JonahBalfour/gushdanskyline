@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gush Dan Skyline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+  html, body { margin: 0; padding: 0; background: #ECE7D8; }
+  #root { min-height: 100vh; }
+</style>
+</head>
+<body>
+
+<div id="root"></div>
+
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script>
+  fetch("app.jsx")
+    .then((r) => r.text())
+    .then((source) => {
+      const { code } = Babel.transform(source, {
+        filename: "app.jsx",
+        presets: [["react", { runtime: "classic" }]],
+      });
+      const script = document.createElement("script");
+      script.text = code;
+      document.body.appendChild(script);
+    });
+</script>
+
+</body>
+</html>
