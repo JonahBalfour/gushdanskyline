@@ -1268,7 +1268,16 @@ function GushDanSkyline() {
       </section>
 
       <section style={styles.panel}>
-        <div style={styles.panelHead}>Locations</div>
+        <div style={styles.mapCreditHead}>
+          <a
+            href="https://www.google.com/maps/d/viewer?usp=sharing&mid=14qUYB3xAs5k_VlWP0IaUJgSte_Y"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={styles.mapCreditHeadLink}
+          >
+            Tel Aviv Area Projects Map by Ynhockey
+          </a>
+        </div>
         <iframe
           src="https://www.google.com/maps/d/embed?mid=14qUYB3xAs5k_VlWP0IaUJgSte_Y"
           width="100%"
@@ -1278,16 +1287,9 @@ function GushDanSkyline() {
           title="Tel Aviv Area Projects map"
         />
         <div style={styles.mapNote}>
-          Map by <a href="https://www.google.com/maps/d/viewer?usp=sharing&mid=14qUYB3xAs5k_VlWP0IaUJgSte_Y" target="_blank" rel="noopener noreferrer" style={styles.mapCreditLink}>Ynhockey (Yan Nasonov)</a>, SkyscraperCity — real pinned locations, colour-coded by status. Shows all mapped projects; not scoped to your filters above.
+          Via SkyscraperCity — real pinned locations, colour-coded by status. Shows all mapped projects; not scoped to your filters above.
         </div>
       </section>
-
-      <footer style={styles.footer}>
-        v2 catalog — {stats.total.toLocaleString()} entries harvested from SkyscraperCity Israel forum thread
-        titles (Gush Dan + Tel Aviv project sub-forums), deduplicated by city + name. Heights/floors reflect the
-        most advanced status found across a project's threads. Many entries lack a recorded height — floors and
-        status are still tracked. Raw and messy by nature of the source; treat as a first pass for cleanup.
-      </footer>
     </div>
   );
 }
@@ -1438,13 +1440,23 @@ const styles = {
   },
   mapFrame: { display: "block", border: "none" },
   mapNote: { fontSize: "11.5px", color: "#7A7360", padding: "10px 16px 14px", borderTop: "1px solid #D8D0BC" },
-  mapCreditLink: { color: "#4B5A63", textDecoration: "underline" },
+  mapCreditHead: { padding: "18px 16px 14px", borderBottom: "1px solid #D8D0BC" },
+  mapCreditHeadLink: {
+    fontFamily: "'Space Grotesk', sans-serif",
+    fontWeight: 700,
+    fontSize: "24px",
+    color: "#2E3B40",
+    textDecoration: "underline",
+    textDecorationColor: "#C9932E",
+    textDecorationThickness: "2px",
+    textUnderlineOffset: "4px",
+    letterSpacing: "-0.01em",
+  },
   table: { width: "100%", borderCollapse: "collapse", fontSize: "13px" },
   th: { textAlign: "left", padding: "9px 14px", borderBottom: "1px solid #D8D0BC", fontFamily: "'IBM Plex Mono', monospace", fontSize: "11.5px", color: "#7A7360", fontWeight: 500 },
   td: { padding: "8px 14px", borderBottom: "1px solid #E4DFCC" },
   pager: { display: "flex", alignItems: "center", gap: "12px", padding: "12px 16px", borderTop: "1px solid #D8D0BC" },
   pagerLabel: { fontFamily: "'IBM Plex Mono', monospace", fontSize: "12px", color: "#4B5A63" },
-  footer: { marginTop: "8px", fontSize: "11.5px", color: "#7A7360", fontFamily: "'IBM Plex Mono', monospace" },
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
