@@ -22,26 +22,26 @@ acting on them, not just a title/search-snippet read.
 
 ---
 
-## Ashira (Eshkol 101) (Tel Aviv) — new project
-- Row(s): none — new
-- Proposed change: add as a new entry (likely 2 rows, one per tower — needs confirmation): 35fl/136m tower + 16fl/70m tower.
-- Evidence: [Tel Aviv | Ashira (Eshkol 101) | 35+16 FL | 136m+70m | U/C](https://www.skyscrapercity.com/threads/tel-aviv-eshkol-101-35-16-fl-136m-70m-approved.2393181/) — title has progressed from "Approved" to "U/C" across search snippets.
-- Confidence: medium (title confirms the project and both towers' specs; row split needs a Claude-in-Chrome read to confirm current status is really U/C and not still mid-transition).
-- Found: 2026-09-12
+## Ashira (Eshkol 101) (Tel Aviv) — unsplit-tower (partial gap — corrected 2026-09-12)
+- Row(s): 462 (currently: name:"Ashira (Eshkol 101)", height:70.0, floors:16, status:"Under Construction")
+- Proposed change: **correction to an earlier queue entry that wrongly logged this as a brand-new project** — it's already in RAW_DATA, matching the 16fl/70m half of the thread title exactly. Thread title is "35+16 FL | 136m+70m", so a second tower (35fl/136m) is missing entirely. Needs one new row: 35fl/136m, status likely "Under Construction" to match the existing row (title snippet shows progression from "Approved" to "U/C" — worth reconfirming both towers moved together).
+- Evidence: [Tel Aviv | Ashira (Eshkol 101) | 35+16 FL | 136m+70m | U/C](https://www.skyscrapercity.com/threads/tel-aviv-eshkol-101-35-16-fl-136m-70m-approved.2393181/)
+- Confidence: high on the split (existing row matches one half of the title exactly); medium on whether the new tower's status matches the existing row's "Under Construction".
+- Found: 2026-09-12 (original entry); corrected 2026-09-12 after Jonah caught the existing-row miss.
 
-## Utopia (Eshkol 103) (Tel Aviv) — new project
-- Row(s): none — new
-- Proposed change: add as a new entry (likely 2 rows): 35fl/136m tower + 16fl/70m tower, status Proposed.
+## Utopia (Eshkol 103) (Tel Aviv) — unsplit-tower (partial gap — corrected 2026-09-12)
+- Row(s): 629 (currently: name:"Utopia (Eshkol 103)", height:70.0, floors:16, status:"Proposed")
+- Proposed change: **correction to an earlier queue entry that wrongly logged this as a brand-new project** — it's already in RAW_DATA, matching the 16fl/70m half of the thread title exactly. Thread title is "35 + 16 FL | 136 + 70 m | Prop", so a second tower (35fl/136m) is missing. Needs one new row: 35fl/136m, status Proposed.
 - Evidence: [Tel Aviv | Utopia (Eshkol 103) | 35 + 16 FL | 136 + 70 m | Prop](https://www.skyscrapercity.com/threads/tel-aviv-utopia-eshkol-103-35-16-fl-136-70-m-prop.2393905/)
-- Confidence: high (title is unambiguous).
-- Found: 2026-09-12
+- Confidence: high (existing row matches one half of the title exactly).
+- Found: 2026-09-12 (original entry); corrected 2026-09-12 after Jonah caught the existing-row miss.
 
-## Zohi Tel Aviv (Eshkol 110) (Tel Aviv) — new project
-- Row(s): none — new
-- Proposed change: add as a new entry (likely 4 rows): 2x16fl + 2x9fl, status Approved.
+## Zohi Tel Aviv (Eshkol 110) (Tel Aviv) — unsplit-tower (partial gap — corrected 2026-09-12)
+- Row(s): 574 (currently: name:"Zohi Tel Aviv (Eshkol 110)", floors:9, height:null, status:"Approved")
+- Proposed change: **correction to an earlier queue entry that wrongly logged this as a brand-new project (and over-counted the missing rows)** — it's already in RAW_DATA, matching one of the "2x9 FL" pair. Thread title is "2x16 + 2x9 FL | Approved", so only 3 rows are actually missing (one more 9fl + two 16fl), not 4.
 - Evidence: [Tel Aviv | Zohi Tel Aviv (Eshkol 110) | 2x16 + 2x9 FL | Approved](https://www.skyscrapercity.com/threads/tel-aviv-zohi-tel-aviv-eshkol-110-2x16-2x9-fl-approved.2428198/)
-- Confidence: high (title is unambiguous).
-- Found: 2026-09-12
+- Confidence: high (existing row matches one of the title's pairs exactly).
+- Found: 2026-09-12 (original entry); corrected 2026-09-12 after Jonah caught the existing-row miss.
 
 ## Seven Seas Sde Dov (Tel Aviv) — new project
 - Row(s): none — new
