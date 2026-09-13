@@ -154,3 +154,59 @@ acting on them, not just a title/search-snippet read.
 - Evidence: [Tel Aviv | Aminadav Towers (Stage 2) | 3 x 47 fl | Approved LPC](https://www.skyscrapercity.com/threads/tel-aviv-aminadav-towers-stage-2-3-x-47-fl-approved-lpc.2328405/)
 - Confidence: high (title is unambiguous, matches existing row's floor count exactly).
 - Found: 2026-09-12
+
+## Beyond (Residential Tower) (Givatayim) — status correction
+- Row(s): 794 (currently: height:null, floors:70, status:"Topped Out")
+- Proposed change: status should be "Approved", not "Topped Out". Confirmed via Claude-in-Chrome read of the live thread (post #2290, Jul 12 2026): "the second tower will be built once the main tower receives this Tofes 4 [occupancy permit]" — construction of the residential tower hasn't started yet; it's sequenced to begin only after the office tower (id 2, unaffected, still correct at 313m/78fl/Topped Out) receives its permit. Floor count (70) and height (null/unknown) were already correct — only status was wrong. Jonah confirmed "Approved" over "On Hold" (not paused after starting, just not yet begun).
+- Evidence: [Givatayim | Beyond | 313 m + ? m | 78 + 70 fl | T/O (page 115)](https://www.skyscrapercity.com/threads/givatayim-beyond-313-m-m-78-70-fl-t-o.1598637/page-115?post_id=198171845#post-198171845) — thread title itself is stale/sloppy labeling per Jonah; trust the post content over the title tag here.
+- Confidence: high (direct read of the current live thread, confirmed with Jonah).
+- Found: 2026-09-13
+
+## Vitania Towers (Tel Aviv) — unsplit-tower + wrong height/status (existing row badly wrong)
+- Row(s): 469 (currently: height:70.0, floors:42, status:"Completed")
+- Proposed change: the current single row is badly wrong on every field. Real thread: "Vitania Towers | 2 x 42 fl + 1 x 36 fl | 1 Completed, 1 T/O, 1 U/C" — a 36fl/146m tower (Completed) plus two 42fl/161.5m towers (one Topped Out, one Under Construction). 70m for 42 floors is physically implausible and was likely a data-entry/parsing error. Needs a full 3-row rebuild: 36fl/146m/Completed, 42fl/161.5m/Topped Out, 42fl/161.5m/Under Construction.
+- Evidence: [Tel Aviv | Vitania Towers | 2 x 42 fl + 1 x 36 fl | 1 Completed, 1 T/O, 1 U/C](https://www.skyscrapercity.com/threads/tel-aviv-vitania-towers-2-x-42-fl-1-x-36-fl-1-completed-1-t-o-1-u-c.1592984/)
+- Confidence: high on the 3-tower breakdown and heights/floors; needs a quick Claude-in-Chrome check only to confirm current status hasn't shifted further (thread is long-running, 20+ pages) before applying.
+- Found: 2026-09-13
+
+## Vertical (Bursa Triangle) (Ramat Gan) — unsplit-tower, needs live thread check
+- Row(s): 22 (currently: height:null, floors:111, status:"Planned")
+- Proposed change: unclear from search snippets alone — thread titles vary across old snapshots: one variant shows "3 x 250–450 m | 60 + 72 + 111 fl | Prep" (3 towers), another separate/renamed thread shows a single "450m | 90 fl | Pro(posed)" tower. Our row (111fl, no height) matches only the tallest tower from the 3-tower variant. Needs a Claude-in-Chrome read of whichever thread is currently live to determine the real, current tower count/heights/status before any edit.
+- Evidence: [Ramat Gan | Vertical (Bursa Triangle) | 3 x 250–450 m | 60 + 72 + 111 fl | Prep](https://www.skyscrapercity.com/threads/ramat-gan-bursa-triangle-3-x-60-fl-approved.2056367/), [Ramat Gan | Vertical / Bursa Triangle 1 | 450m | 90 fl | Prep](https://www.skyscrapercity.com/threads/ramat-gan-vertical-bursa-triangle-1-450m-1476ft-90-fl-prep.2372986/)
+- Confidence: low (conflicting historical snapshots; this was also one of the "6 bonus multi-tower leads" already flagged in CLAUDE.md's outstanding list).
+- Found: 2026-09-13
+
+## Global Towers (Petah Tikva) — existing rows likely mismatched, needs live thread check
+- Row(s): 12 (Building D, 86m/20fl/Completed), 816 (Tower A, 167m/43fl/Completed), 817 (Tower B, 141m/36fl/Completed)
+- Proposed change: unclear — the live thread (id 1972498) has cycled through many title variants over the years ("32+36fl/125+140m, 1 Completed 1 Prep" → "...2 U/C" → "...1 Completed 1 T/O 1 U/C 2 Approved LPC", implying as many as 5 towers total). None of our 3 existing rows' numbers (86/20, 167/43, 141/36) cleanly match the thread's stated 125m/32fl and 140m/36fl pair for the two main towers. Reported feedback said "Global Towers A/B seem mixed up," but the mismatch may run deeper than a simple swap. Needs a full Claude-in-Chrome read of the current live thread to re-map all rows correctly.
+- Evidence: [Petah Tikva | Global Towers thread (id 1972498), various historical titles](https://www.skyscrapercity.com/threads/petah-tikva-global-towers-32-36-fl-125-140m-1-completed-2-u-c.1972498/)
+- Confidence: low (existing rows don't cleanly match any found snapshot; needs ground-truth live read).
+- Found: 2026-09-13
+
+## She (Tel Aviv) — possible status correction
+- Row(s): 484 (currently: height:164.0, floors:40, status:"Planned")
+- Proposed change: height already matches externally-reported ~164m. Feedback suggested this should be a "missing U/C project," implying status may now be "Under Construction" rather than "Planned." No SkyscraperCity thread found via search to confirm the current title/status — needs a direct Claude-in-Chrome search/check.
+- Evidence: none found yet via WebSearch; needs live lookup.
+- Confidence: low (height matches, but status change unconfirmed).
+- Found: 2026-09-13
+
+## Avraham Tower (Bat Yam) — possible status correction
+- Row(s): 25 (currently: height:161.0, floors:45, status:"Planned")
+- Proposed change: height already matches externally-reported ~161m. Feedback implies this may now be further along (U/C) rather than "Planned." No SkyscraperCity thread found via search under this name — needs a direct Claude-in-Chrome search/check (may be listed under a different/renamed thread title).
+- Evidence: none found yet via WebSearch; needs live lookup.
+- Confidence: low (height matches, but status change unconfirmed, and no thread located yet).
+- Found: 2026-09-13
+
+## Semel North (Tel Aviv) — possible name collision or major data error
+- Row(s): 512 (currently: height:29.0, floors:8, status:"Under Construction")
+- Proposed change: feedback claims a "Semel North" project at ~186m should exist and is missing from the list — but our existing row under that exact name is a small 8-floor/29m building, nothing close to 186m. No SkyscraperCity thread matching "Semel North" at ~186m was found via search. Possible name collision (two different unrelated projects sharing part of a name) rather than a data error in the existing row. Needs a direct Claude-in-Chrome search to identify the actual ~186m project's real thread/name before doing anything.
+- Evidence: none found yet via WebSearch; needs live lookup.
+- Confidence: low (existing row may be entirely unrelated to the project being described).
+- Found: 2026-09-13
+
+## Landmark Towers (Tower B) (Tel Aviv) — reported height conflicts with primary source
+- Row(s): 815 (currently: height:162.0, floors:45, status:"Topped Out")
+- Proposed change: feedback claims Tower B should be ~205m, but the SkyscraperCity thread itself explicitly states "2 x 162m" for both towers A and B — matching our current data exactly. Per this project's methodology, SkyscraperCity is trusted over other sources when they conflict. Not changing anything unless a live re-check of the thread shows the height was revised upward since that title was set.
+- Evidence: [Tel Aviv | Landmark Towers (formerly Arania Towers Sharona lot 7 tower, 2 x 162m) | 45fl](https://www.skyscrapercity.com/threads/tel-aviv-landmark-towers-formerly-arania-towers-sharona-lot-7-tower-2-x-162m-45fl-u-c.1850429/)
+- Confidence: low that a change is needed at all — flagging the external report vs. primary-source conflict for awareness, not proposing an edit unless a live check says otherwise.
+- Found: 2026-09-13
