@@ -75,24 +75,13 @@ repo/session, not here, since this project only owns the standalone site.
   cloud), not proxied, matching how `jonahbalfour.com` is configured.
   These were added and are resolving correctly.
 - **GitHub Pages**: enabled on `main` branch, root path, `CNAME` file
-  present in the repo. Pages build status is "built" and the site serves
-  correctly over **plain HTTP**.
-- **HTTPS**: as of the last check, GitHub had **not yet finished
-  provisioning the TLS certificate** for the custom domain
-  (`https_enforced: false`, and `https://gushdanskyline.com` fails the TLS
-  handshake). This is normal shortly after DNS goes live and usually
-  resolves within a few hours; check with:
-  ```bash
-  gh api repos/JonahBalfour/gushdanskyline/pages
-  curl -sI --max-time 10 https://gushdanskyline.com
-  ```
-  If it's still not resolved after ~24 hours, something's wrong and worth
-  investigating (re-check DNS, or re-toggle the custom domain in the repo
-  Settings → Pages to force GitHub to retry issuance).
+  present in the repo. Pages build status is "built".
+- **HTTPS**: fully live as of 2026-09-12. Certificate state is "approved"
+  (expires 2026-12-11), `https_enforced: true`, and `http://` now
+  301-redirects to `https://`. Nothing further needed here.
 
 ## Outstanding
 
-- [ ] Confirm HTTPS is live for `gushdanskyline.com` (see above).
 - [ ] Coordinate with the portfolio-site project to remove
       `projects/skyscrapers/` there and point its hub-page card at
       `gushdanskyline.com`.
