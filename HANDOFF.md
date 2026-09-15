@@ -1063,3 +1063,74 @@ thread cross-checks in this project.
 Dataset now at 937 rows (936 + 1 from the Reisdor split). Still
 unresolved: ~49 more "unsplit multi-tower" flags, 69 duplicate flags, and
 67 missing-height flags — see `CLAUDE.md`'s Outstanding section.
+
+## 2026-09-15 — Applied the "ready to apply" batch from REVIEW_QUEUE.md
+
+Worked through the 13 highest-confidence entries in `REVIEW_QUEUE.md`
+(accumulated from the weekly automated sweep and a round of friend
+feedback on 2026-09-13/14) and applied them to `RAW_DATA`. All were
+confirmed via unambiguous SkyscraperCity thread titles, or — for Beyond
+and Vitania — a direct Claude-in-Chrome read of the live thread. Removed
+from the queue after applying:
+
+- **Utopia (Eshkol 103)** (Tel Aviv) — id 629 relabeled "(Tower 1)"
+  (16fl/70m, Proposed, unchanged); added id 935 "(Tower 2)" 35fl/136m,
+  Proposed.
+- **Zohi Tel Aviv (Eshkol 110)** (Tel Aviv) — id 574 relabeled
+  "(Tower 1)" (9fl, Approved, unchanged); added ids 936–938 as
+  "(Tower 2)" 9fl, "(Tower 3)" 16fl, "(Tower 4)" 16fl, all Approved,
+  height unknown for all four per the thread title.
+- **Seven Seas Sde Dov** (Tel Aviv) — new, 3 rows (ids 939–941): 51fl,
+  21fl, 9fl, all Proposed, height unknown (thread title itself shows
+  "??? M"). Placed at approximate Sde Dov-cluster coordinates
+  (32.0834, 34.78072) since no address was given.
+- **Sde Dov 3106** (Tel Aviv) — new, 1 row (id 942): 9fl, Proposed,
+  height unknown. Same approximate Sde Dov coordinates.
+- **Nir Nahum Complex** (Bat Yam) — id 151's floor count was itself
+  wrong (36 vs. actual 40); corrected to 40fl and relabeled
+  "(Tower 1)"; added ids 943–944 as "(Tower 2)"/"(Tower 3)", all 40fl,
+  Planned.
+- **Orlov Complex** (Petah Tikva) — id 159 relabeled "(Tower 1)"
+  (28fl, Proposed, unchanged); added id 945 "(Tower 2)" 28fl and id 946
+  "(Tower 3)" 17fl, both Proposed.
+- **Herzl Balfour Complex Bat Yam** (Bat Yam) — id 363 relabeled
+  "(Tower 1)" (35fl, Planned, unchanged); added ids 947–948 as
+  "(Tower 2)"/"(Tower 3)", both 35fl, Planned.
+- **SPACE Towers** (Petah Tikva) — id 437 relabeled "(Tower 1)",
+  height filled in at 77m (was null); added ids 949–950 as
+  "(Tower 2)"/"(Tower 3)", both 22fl/77m, Completed.
+- **Gindi Towers** (Ganei Tikva) — id 459 relabeled "(Tower 1)", height
+  filled in at 65m (was null, per developer site); added ids 951–952
+  as "(Tower 2)"/"(Tower 3)", both 20fl/65m, Completed.
+- **Sokolov Compound EB** (Holon) — id 347 relabeled "(Tower 1)" (14fl,
+  Proposed, unchanged); added id 953 "(Tower 2)" 30fl, Proposed.
+- **Aminadav Towers (Stage 2)** (Tel Aviv) — id 626 relabeled
+  "(Tower 1)" (47fl, Approved, unchanged); added ids 954–955 as
+  "(Tower 2)"/"(Tower 3)", both 47fl, Approved.
+- **Beyond (Residential Tower)** (Givatayim) — id 794 status corrected
+  from "Topped Out" to "Approved". Confirmed via Claude-in-Chrome read
+  of the live thread (post #2290, Jul 12 2026): the residential tower's
+  construction hasn't started — it's sequenced to begin only once the
+  office tower (id 2, unaffected) receives its occupancy permit
+  ("Tofes 4"). The thread's own title tag ("T/O") was stale/sloppy
+  labeling per Jonah, not to be trusted over the post content.
+- **Vitania Towers** (Tel Aviv) — id 469 was badly wrong on every
+  field (70m for 42 floors is physically implausible) — rebuilt as a
+  genuine 3-tower complex: id 469 relabeled "(Tower 1)" corrected to
+  146m/36fl/Completed; added id 956 "(Tower 2)" 161.5m/42fl/Topped Out
+  and id 957 "(Tower 3)" 161.5m/42fl/Under Construction.
+
+Verified in the browser after applying: 960 total rows (937 + 23 new),
+no console errors, spot-checked Vitania Towers' 3 rows render correctly.
+
+Noticed in passing, not fixed (pre-existing, unrelated to this batch):
+ids 928–930 are each used twice in `RAW_DATA` — once for "22–28 Eilat EB
+(Tower 2/3)" and once for "Kalanit Towers (Tower 2/3/4)" (from an
+earlier sweep). Not a rendering-breaking issue since the id isn't
+required to be a React key in the current table implementation, but
+worth a dedicated cleanup pass — flagged in `CLAUDE.md`'s Outstanding
+section.
+
+14 entries remain in `REVIEW_QUEUE.md`: 8 "one detail to confirm" and 6
+"needs a live re-check" (Vertical/Bursa Triangle, Global Towers, She,
+Avraham Tower, Semel North, Landmark Towers Tower B).

@@ -103,11 +103,21 @@ repo/session, not here, since this project only owns the standalone site.
       Claude in Chrome (the user's logged-in browser) instead for any
       thread cross-checks, since it still gets full access.
 - [ ] Long-standing flagged/ambiguous items from earlier sessions, still
-      open (see HANDOFF.md for context on each): Vitania Towers,
-      Ha-Umanim Towers, Lapid Towers, BSR Shaar HaYam, Yoseftal Gate
-      Masterplan, VICA Park, Reisdor Towers, Global Gold Phase B, BSR
-      Tower 4 height, and the Hagag Einstein 8-building masterplan
-      (undecided how to schema a wide-range masterplan as rows at all).
+      open (see HANDOFF.md for context on each): Ha-Umanim Towers, Lapid
+      Towers, BSR Shaar HaYam, Yoseftal Gate Masterplan, VICA Park,
+      Global Gold Phase B, BSR Tower 4 height, and the Hagag Einstein
+      8-building masterplan (undecided how to schema a wide-range
+      masterplan as rows at all). Vitania Towers and Reisdor Towers were
+      resolved (see HANDOFF.md's 2026-09-12 and 2026-09-15 entries) and
+      removed from this list.
+- [ ] Duplicate `id` values in `RAW_DATA`: 928, 929, and 930 are each
+      used twice — once for "22–28 Eilat EB (Tower 2/3)" and once for
+      "Kalanit Towers (Tower 2/3/4)", from an earlier sweep that didn't
+      check against ids already reused elsewhere. Not currently breaking
+      the live app, but worth a dedicated pass to renumber one set and
+      confirm no other id collisions exist before they cause a real bug
+      (e.g. if ids are ever used as React keys). Noticed 2026-09-15
+      while applying REVIEW_QUEUE.md fixes.
 - [ ] 6 bonus multi-tower leads found during an earlier height-fill sweep,
       not yet added to `RAW_DATA`: Vertical/Bursa Triangle (Ramat Gan),
       Jabotinsky-Herzl (Ramat Gan), Orek and Oz House (Ramat Gan), Dofen
