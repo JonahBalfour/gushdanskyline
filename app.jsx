@@ -1195,17 +1195,21 @@ function GushDanSkyline() {
                 background: cityColor(b.city),
                 opacity: b.status === "Proposed" || b.status === "Planned" ? 0.35 : b.status === "Under Construction" ? 0.6 : 1,
                 borderStyle: (b.status === "Proposed" || b.status === "Planned") ? "dashed" : "solid",
+                outline: hovered === b.id ? "2px solid #1C2A33" : "none",
+                outlineOffset: "1px",
               }}
               title={`${b.name} — ${b.height} m`}
             />
           ))}
         </div>
-        {hovered !== null && skylineData.find((b) => b.id === hovered) && (
-          <div style={styles.skylineTooltip}>
-            {skylineData.find((b) => b.id === hovered).name} — {skylineData.find((b) => b.id === hovered).height} m,{" "}
-            {skylineData.find((b) => b.id === hovered).floors ?? "?"} floors, {skylineData.find((b) => b.id === hovered).city} ({skylineData.find((b) => b.id === hovered).status})
-          </div>
-        )}
+        <div style={styles.skylineTooltip}>
+          {hovered !== null && skylineData.find((b) => b.id === hovered)
+            ? (() => {
+                const b = skylineData.find((x) => x.id === hovered);
+                return `${b.name} — ${b.height} m, ${b.floors ?? "?"} floors, ${b.city} (${b.status})`;
+              })()
+            : "Hover a bar (or a row below) for details"}
+        </div>
       </section>
 
       <section style={styles.filters}>
@@ -1275,7 +1279,13 @@ function GushDanSkyline() {
             </thead>
             <tbody>
               {paged.map((b, i) => (
-                <tr key={b.id} className="gd-row">
+                <tr
+                  key={b.id}
+                  className="gd-row"
+                  onMouseEnter={() => setHovered(b.id)}
+                  onMouseLeave={() => setHovered(null)}
+                  style={hovered === b.id ? { background: "#F4EFDF" } : undefined}
+                >
                   <td style={{ ...styles.td, textAlign: "right", fontFamily: "IBM Plex Mono, monospace", color: "#7A7360" }}>{page * pageSize + i + 1}</td>
                   <td style={styles.td}>{b.name}</td>
                   <td style={{ ...styles.td, color: cityColor(b.city) }}>{b.city}</td>
@@ -1436,7 +1446,7 @@ const styles = {
   panelHead: { fontFamily: "'IBM Plex Mono', monospace", fontSize: "12px", color: "#4B5A63", padding: "10px 16px", borderBottom: "1px solid #D8D0BC" },
   skyline: { display: "flex", alignItems: "flex-end", gap: "2px", height: "160px", padding: "16px 16px 0" },
   bar: { flex: "1 1 0", minWidth: "3px", borderTop: "1px solid #1C2A33" },
-  skylineTooltip: { fontFamily: "'IBM Plex Mono', monospace", fontSize: "12.5px", padding: "8px 16px 14px", color: "#1C2A33" },
+  skylineTooltip: { fontFamily: "'IBM Plex Mono', monospace", fontSize: "12.5px", padding: "8px 16px 14px", color: "#1C2A33", minHeight: "1.4em", boxSizing: "content-box" },
   filters: { display: "flex", gap: "10px", alignItems: "center", marginBottom: "20px", flexWrap: "wrap" },
   input: { padding: "9px 12px", border: "1px solid #D8D0BC", background: "#F4EFDF", fontSize: "13px", minWidth: "180px", color: "#1C2A33" },
   select: { padding: "9px 12px", border: "1px solid #D8D0BC", background: "#F4EFDF", fontSize: "13px", color: "#1C2A33" },

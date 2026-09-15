@@ -1273,3 +1273,39 @@ Dataset now at 982 rows (978 + 4 new: Ashira's 2 low-rises, Vertical's
 **2 entries remain in `REVIEW_QUEUE.md`**: Avraham Tower and Semel
 North, both still needing their actual SkyscraperCity thread located
 before anything can be confirmed or applied.
+
+## 2026-09-15 (design) — UI feedback from Ynhockey, 2 of 3 fixed
+
+Jonah posted the dashboard to SkyscraperCity as "Gush Dan Project
+Dashboard" (thread 2461137, under his handle theKD80) — this is also
+where the `usuallyc` feedback batch worked earlier today came from.
+Ynhockey (creator of the embedded map) replied with 3 UI suggestions:
+
+1. **Fixed**: hovering a skyline bar showed the tower name/height in a
+   tooltip below the chart, but that tooltip `<div>` only existed in the
+   DOM while hovering — so it collapsed to zero height otherwise, and
+   the whole page (search box, filters, everything below) jumped every
+   time you hovered a bar. Fix: the tooltip container now always
+   renders with a reserved `minHeight`, showing a placeholder ("Hover a
+   bar (or a row below) for details") when nothing's hovered instead of
+   disappearing.
+2. **Fixed**: connected the skyline chart and the catalog table.
+   Hovering a bar highlights the matching row (if it's on the current
+   page) with the same background used for the table's own `:hover`
+   state; hovering a table row highlights the matching bar (if it's
+   tall enough to appear in the top-90 skyline) with a dark outline.
+   Both directions share the existing `hovered` state, so no new
+   state was needed.
+3. **Not yet done**: "make it easier to link from a project to its
+   dedicated SkyscraperCity thread directly on the site" — this isn't a
+   quick UI tweak like the other two. `RAW_DATA` has no per-building
+   thread-URL field today, and most of the 982 rows' actual thread URLs
+   were never recorded (we only have URLs for the small fraction
+   touched during data-quality work). Adding real "view thread" links
+   for the whole dataset would mean either backfilling ~900+ URLs by
+   hand/search, or scoping it down to just the rows we already have a
+   URL for. Discussing scope with Jonah before starting.
+
+Verified both fixes in the browser: hovering a bar or a row updates the
+tooltip text and highlights the counterpart, with no layout shift and
+no console errors.
