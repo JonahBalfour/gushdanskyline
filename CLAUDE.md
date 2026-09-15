@@ -110,16 +110,17 @@ repo/session, not here, since this project only owns the standalone site.
       masterplan as rows at all). Vitania Towers and Reisdor Towers were
       resolved (see HANDOFF.md's 2026-09-12 and 2026-09-15 entries) and
       removed from this list.
-- [ ] `REVIEW_QUEUE.md` has 6 open entries, all "needs a live re-check"
-      (weakest tier — conflicting or missing evidence, don't act without
-      reading the actual thread first): Vertical/Bursa Triangle (Ramat
-      Gan), Global Towers (Petah Tikva), She (Tel Aviv), Avraham Tower
-      (Bat Yam), Semel North (Tel Aviv), Landmark Towers Tower B (Tel
-      Aviv) — plus one fresh unconfirmed finding: Ashira (Eshkol 101)'s
-      2 extra low-rise buildings (7fl + 8fl) mentioned in its marketing
-      post but not yet checked for status. See HANDOFF.md's 2026-09-15
-      entries for what's already been resolved out of this batch (19
-      entries applied so far across two rounds).
+- [ ] `REVIEW_QUEUE.md` has 2 open entries, both stuck on the same
+      problem — a real project confirmed to exist via city planning docs
+      / developer sites, but no matching SkyscraperCity thread located
+      via WebSearch: **Avraham Tower** (Bat Yam — developer Mizrachi &
+      Sons, "Migdal Avraham", Rabbi Nissenbaum 33) and **Semel North**
+      (Tel Aviv — likely "Semel Tzafon" per plan תא/2988ב, 51fl). Next
+      step for both: browse the relevant SkyscraperCity sub-forum
+      directly via Claude in Chrome rather than relying on WebSearch/
+      Google, since neither project's thread is turning up that way.
+      See HANDOFF.md's 2026-09-15 entries for the 25 entries already
+      resolved out of the original 28-item batch.
 - [ ] Sde Dov North (Kika Braz) (Tel Aviv): its source post mentions
       "several smaller residential and office buildings" beyond the two
       towers already in `RAW_DATA` (ids 590, 968), with no floor counts

@@ -1193,3 +1193,83 @@ current status unknown, needs its own check before adding.
 6 entries remain in `REVIEW_QUEUE.md`, all "needs a live re-check":
 Vertical/Bursa Triangle, Global Towers, She, Avraham Tower, Semel North,
 Landmark Towers Tower B — plus the new Ashira low-rises finding above.
+
+## 2026-09-15 (continued) — Worked all 7 "needs a live re-check" entries
+
+Checked every remaining entry via Claude in Chrome. Five resolved
+(2 applied, 2 needed no change after all, 1 partially applied); 2 stay
+open, still genuinely unresolved after a real search effort.
+
+- **Ashira (Eshkol 101) low-rises** — resolved and applied, with a
+  correction. The OP itself said "2 towers and 2 midrises (9 FL)", but
+  the architect's own Instagram permit announcement (quoted in a Mar
+  2026 post) is far more specific and authoritative: "406 units across
+  a 34-story tower, alongside 7, 8 and 15-story boutique buildings."
+  This also corrected the two tower floor counts slightly — the thread
+  title's "35+16" was itself stale/rounded; the real figures are 34fl
+  and 15fl. Applied: id 462 corrected to 15fl (was 16), id 959 corrected
+  to 34fl (was 35), and added ids 976–977 as "(Low-rise 1)" 7fl and
+  "(Low-rise 2)" 8fl, both Under Construction (matches the whole
+  project's status as of Mar 2026).
+- **Vertical (Bursa Triangle)** — partially applied, with real
+  uncertainty remaining. The live thread (492 posts, 8+ years, still
+  active as of Aug 2026) has ballooned in scope from an original
+  "60fl + 2x45fl approved" plan to the current title's "3 x 250–450m |
+  60+72+111fl | Prep". A photo from the most recent post shows active
+  site excavation, but it's unclear which of the 3 towers that's for —
+  could be the first phase only. Applied the 3-tower split (ids 22,
+  978–979 at 111fl/72fl/60fl) with status "Proposed" (conservative,
+  matching the thread's own ambiguous "Prep" tag) rather than guessing
+  "Under Construction" for towers that may not have broken ground yet.
+  Height stays unknown for all three — the title's "250-450m" is a
+  range across all 3, not per-tower. Worth another look once the
+  thread clarifies which tower is actually rising.
+- **Global Towers** — no change needed after all; the "A/B mixed up"
+  concern from the friend feedback doesn't hold up. The current live
+  title is "Global Towers & Global Gold | 43+36+34+?+20 fl |
+  167+141+144+?+86 m | 2 Completed, 1 T/O, 2 Approved LPC" — our
+  existing rows (Tower A 43fl/167m, Tower B 36fl/141m, Building D
+  20fl/86m, plus **Global Gold Phase A** 34fl/144m, which turned out to
+  already exist in RAW_DATA as id 818) match 4 of the 5 listed buildings
+  exactly. The only real gap is the 5th building, shown in the title as
+  "?fl/?m" — almost certainly "Global Gold Phase B", already flagged as
+  a long-standing ambiguous item in CLAUDE.md. Nothing to fix on the
+  existing rows.
+- **She** (Tel Aviv) — resolved and applied. Found under its original
+  thread title "Leumi Tower" (renamed to "She" by a moderator partway
+  through) — same thread id as the search-cached "40 FL | permits"
+  version. A Sep 3, 2026 post settles the exact question the feedback
+  raised ("On hold or U/C?"): "It's a very active site. They're doing
+  slurry construction." Status corrected from Planned to Under
+  Construction (id 484); height (164m) and floors (40) were already
+  correct.
+- **Avraham Tower** (Bat Yam) — still unresolved. Identified the
+  developer (Mizrachi & Sons Group, "Migdal Avraham") and address
+  (Rabbi Nissenbaum 33, Bat Yam industrial zone, 46fl per the
+  developer's own site — slightly more than our 45fl), but no matching
+  SkyscraperCity thread found despite several search attempts (checked
+  "Eden Tower" as a candidate — confirmed unrelated, different project).
+  Left as-is; may need a direct SkyscraperCity forum search rather than
+  Google.
+- **Semel North** (Tel Aviv) — still unresolved, but better identified.
+  City planning references (plan תא/2988ב) describe "Semel Tzafon"
+  ("Symbol North") as a 51-story residential tower (225 units) plus an
+  8-story building, bounded by Arlozorov/Ben Gurion/Zhabotinsky/Ben
+  Sarouk streets — 51fl plausibly matches the ~186m the feedback
+  claimed. No SkyscraperCity thread located under "Semel Tzafon",
+  "Sumail", or "Soumeil" despite several search attempts. Left as-is;
+  our existing 8fl/29m row under "Semel North" may or may not be the
+  8-story building mentioned in the same plan — genuinely unclear
+  without the actual thread.
+- **Landmark Towers (Tower B)** — confirmed no change needed, now with
+  high confidence. The live thread (1,389 posts, last activity 6 days
+  ago) still reads "2 x 162m | 45 fl | 1 Completed, 1 T/O" — matching
+  our data exactly. The external ~205m report doesn't hold up against
+  this actively-maintained primary source.
+
+Dataset now at 982 rows (978 + 4 new: Ashira's 2 low-rises, Vertical's
+2 additional towers).
+
+**2 entries remain in `REVIEW_QUEUE.md`**: Avraham Tower and Semel
+North, both still needing their actual SkyscraperCity thread located
+before anything can be confirmed or applied.

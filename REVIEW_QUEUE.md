@@ -22,51 +22,16 @@ acting on them, not just a title/search-snippet read.
 
 ---
 
-## Ashira (Eshkol 101) low-rises (Tel Aviv) — unsplit-tower, needs live check
-- Row(s): 462 (Tower 1, 16fl/70m), 959 (Tower 2, 35fl/136m) — both already correct as of 2026-09-15
-- Proposed change: the project's own marketing post describes 2 more buildings beyond the two towers already in RAW_DATA — low-rises at 7fl and 8fl (204 units combined, per the same post). Neither the thread title nor our data captures these. Height, exact status, and current construction stage unknown — needs a live Chrome check of the thread (not just the marketing post) before adding.
-- Evidence: [Tel Aviv | Ashira (Eshkol 101) | 35+16 FL | 136m+70m | U/C](https://www.skyscrapercity.com/threads/tel-aviv-ashira-eshkol-101-35-16-fl-136m-70m-u-c.2393181/) — post #5, Apr 2024, marketing description mentions "two 7+8 floor buildings" not reflected in the thread title.
-- Confidence: low (existence confirmed by the marketing post; height/status entirely unconfirmed).
-- Found: 2026-09-15
-
-## Vertical (Bursa Triangle) (Ramat Gan) — unsplit-tower, needs live thread check
-- Row(s): 22 (currently: height:null, floors:111, status:"Planned")
-- Proposed change: unclear from search snippets alone — thread titles vary across old snapshots: one variant shows "3 x 250–450 m | 60 + 72 + 111 fl | Prep" (3 towers), another separate/renamed thread shows a single "450m | 90 fl | Pro(posed)" tower. Our row (111fl, no height) matches only the tallest tower from the 3-tower variant. Needs a Claude-in-Chrome read of whichever thread is currently live to determine the real, current tower count/heights/status before any edit.
-- Evidence: [Ramat Gan | Vertical (Bursa Triangle) | 3 x 250–450 m | 60 + 72 + 111 fl | Prep](https://www.skyscrapercity.com/threads/ramat-gan-bursa-triangle-3-x-60-fl-approved.2056367/), [Ramat Gan | Vertical / Bursa Triangle 1 | 450m | 90 fl | Prep](https://www.skyscrapercity.com/threads/ramat-gan-vertical-bursa-triangle-1-450m-1476ft-90-fl-prep.2372986/)
-- Confidence: low (conflicting historical snapshots; this was also one of the "6 bonus multi-tower leads" already flagged in CLAUDE.md's outstanding list).
-- Found: 2026-09-13
-
-## Global Towers (Petah Tikva) — existing rows likely mismatched, needs live thread check
-- Row(s): 12 (Building D, 86m/20fl/Completed), 816 (Tower A, 167m/43fl/Completed), 817 (Tower B, 141m/36fl/Completed)
-- Proposed change: unclear — the live thread (id 1972498) has cycled through many title variants over the years ("32+36fl/125+140m, 1 Completed 1 Prep" → "...2 U/C" → "...1 Completed 1 T/O 1 U/C 2 Approved LPC", implying as many as 5 towers total). None of our 3 existing rows' numbers (86/20, 167/43, 141/36) cleanly match the thread's stated 125m/32fl and 140m/36fl pair for the two main towers. Reported feedback said "Global Towers A/B seem mixed up," but the mismatch may run deeper than a simple swap. Needs a full Claude-in-Chrome read of the current live thread to re-map all rows correctly.
-- Evidence: [Petah Tikva | Global Towers thread (id 1972498), various historical titles](https://www.skyscrapercity.com/threads/petah-tikva-global-towers-32-36-fl-125-140m-1-completed-2-u-c.1972498/)
-- Confidence: low (existing rows don't cleanly match any found snapshot; needs ground-truth live read).
-- Found: 2026-09-13
-
-## She (Tel Aviv) — possible status correction
-- Row(s): 484 (currently: height:164.0, floors:40, status:"Planned")
-- Proposed change: height already matches externally-reported ~164m. Feedback suggested this should be a "missing U/C project," implying status may now be "Under Construction" rather than "Planned." No SkyscraperCity thread found via search to confirm the current title/status — needs a direct Claude-in-Chrome search/check.
-- Evidence: none found yet via WebSearch; needs live lookup.
-- Confidence: low (height matches, but status change unconfirmed).
-- Found: 2026-09-13
-
-## Avraham Tower (Bat Yam) — possible status correction
+## Avraham Tower (Bat Yam) — thread not located
 - Row(s): 25 (currently: height:161.0, floors:45, status:"Planned")
-- Proposed change: height already matches externally-reported ~161m. Feedback implies this may now be further along (U/C) rather than "Planned." No SkyscraperCity thread found via search under this name — needs a direct Claude-in-Chrome search/check (may be listed under a different/renamed thread title).
-- Evidence: none found yet via WebSearch; needs live lookup.
-- Confidence: low (height matches, but status change unconfirmed, and no thread located yet).
-- Found: 2026-09-13
+- Proposed change: unknown until the actual SkyscraperCity thread is found. Identified the real-world project (developer Mizrachi & Sons Group, "Migdal Avraham", Rabbi Nissenbaum 33 in Bat Yam's industrial zone, 46fl per the developer's own site — slightly more than our 45fl) but no matching thread found via WebSearch across several attempts. Checked "Eden Tower" (168m/46fl) as a candidate — confirmed unrelated, different project (177 units, different pricing/positioning). Needs a direct SkyscraperCity forum search (via Claude in Chrome, browsing the Bat Yam sub-forum directly) rather than Google, since Google isn't surfacing it.
+- Evidence: developer site confirms the real project exists; no SkyscraperCity thread URL found yet.
+- Confidence: low (project confirmed to exist; SkyscraperCity thread unconfirmed).
+- Found: 2026-09-13; re-attempted 2026-09-15, still unresolved.
 
-## Semel North (Tel Aviv) — possible name collision or major data error
+## Semel North (Tel Aviv) — thread not located, but real project better identified
 - Row(s): 512 (currently: height:29.0, floors:8, status:"Under Construction")
-- Proposed change: feedback claims a "Semel North" project at ~186m should exist and is missing from the list — but our existing row under that exact name is a small 8-floor/29m building, nothing close to 186m. No SkyscraperCity thread matching "Semel North" at ~186m was found via search. Possible name collision (two different unrelated projects sharing part of a name) rather than a data error in the existing row. Needs a direct Claude-in-Chrome search to identify the actual ~186m project's real thread/name before doing anything.
-- Evidence: none found yet via WebSearch; needs live lookup.
-- Confidence: low (existing row may be entirely unrelated to the project being described).
-- Found: 2026-09-13
-
-## Landmark Towers (Tower B) (Tel Aviv) — reported height conflicts with primary source
-- Row(s): 815 (currently: height:162.0, floors:45, status:"Topped Out")
-- Proposed change: feedback claims Tower B should be ~205m, but the SkyscraperCity thread itself explicitly states "2 x 162m" for both towers A and B — matching our current data exactly. Per this project's methodology, SkyscraperCity is trusted over other sources when they conflict. Not changing anything unless a live re-check of the thread shows the height was revised upward since that title was set.
-- Evidence: [Tel Aviv | Landmark Towers (formerly Arania Towers Sharona lot 7 tower, 2 x 162m) | 45fl](https://www.skyscrapercity.com/threads/tel-aviv-landmark-towers-formerly-arania-towers-sharona-lot-7-tower-2-x-162m-45fl-u-c.1850429/)
-- Confidence: low that a change is needed at all — flagging the external report vs. primary-source conflict for awareness, not proposing an edit unless a live check says otherwise.
-- Found: 2026-09-13
+- Proposed change: unknown until the actual thread is found. City planning references (plan תא/2988ב, "Semel Tzafon" / "Symbol North") describe a 51-story residential tower (225 units) plus an 8-story building, bounded by Arlozorov/Ben Gurion/Zhabotinsky/Ben Sarouk streets in Tel Aviv — 51fl plausibly matches the ~186m the original feedback claimed. Our existing row (8fl/29m) may or may not be the 8-story building from the same plan — genuinely unclear without the actual thread. No SkyscraperCity thread located under "Semel Tzafon", "Sumail", or "Soumeil" despite several search attempts.
+- Evidence: municipal planning documents confirm the real project and its scale; no SkyscraperCity thread URL found yet.
+- Confidence: low (project better identified than before, but still no primary-source thread to confirm against, and the relationship to our existing row is unclear).
+- Found: 2026-09-13; re-attempted 2026-09-15, still unresolved.
