@@ -1309,3 +1309,28 @@ Ynhockey (creator of the embedded map) replied with 3 UI suggestions:
 Verified both fixes in the browser: hovering a bar or a row updates the
 tooltip text and highlights the counterpart, with no layout shift and
 no console errors.
+
+## 2026-09-15 (design, continued) — Added per-project thread links (#3)
+
+Added a `url` field to `RAW_DATA` (added to the schema, not required —
+most rows simply don't have it) and backfilled it for every row we
+already had a confirmed SkyscraperCity thread URL for from today's
+data-quality work: 74 rows across ~27 distinct threads (Reisdor,
+Ashira, Utopia, Zohi, Seven Seas Sde Dov, Sde Dov 3106/306/North,
+Eshkol 102/108/109, Sde Dov 3208, Nir Nahum, Orlov, Herzl Balfour,
+Schiller, SPACE Towers, Gindi Towers, Sokolov, Aminadav, Beyond,
+Vitania, Vertical/Bursa Triangle, Global Towers/Global Gold, She,
+Landmark Towers). Jonah's call on scope: add the field and backfill
+gradually rather than doing all ~900 rows at once or falling back to a
+generic search link.
+
+UI: a new "Thread" column in the catalog table shows a "View thread ↗"
+link when `b.url` exists, else an em-dash. The skyline hover tooltip
+also shows the same link inline when the hovered building has one.
+Verified in the browser: link text/href correct, tooltip link appears
+on hover, no console errors, table's empty-state colSpan updated for
+the new column.
+
+The other ~900 rows will pick up URLs opportunistically as future
+data-quality passes (weekly sweep, review-queue work) touch them —
+no dedicated backfill project planned.

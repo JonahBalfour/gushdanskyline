@@ -40,6 +40,14 @@ Every data change should get a dated entry in `HANDOFF.md`: what changed,
 the source thread, and the reasoning — this is the project's memory
 across sessions, since RAW_DATA itself doesn't carry provenance.
 
+Each row can optionally carry a `url` field pointing to its
+SkyscraperCity thread — it powers the "View thread" link in the table
+and hover tooltip. Most rows don't have one yet (added 2026-09-15,
+backfilled only for the ~74 rows touched during data-quality work so
+far). When you confirm a row against its thread going forward, add the
+`url` field at the same time — no dedicated backfill project, just
+opportunistic coverage as rows get touched.
+
 ## Testing changes locally before pushing
 
 ```bash
