@@ -22,61 +22,12 @@ acting on them, not just a title/search-snippet read.
 
 ---
 
-## Ashira (Eshkol 101) (Tel Aviv) — unsplit-tower (partial gap — corrected 2026-09-12)
-- Row(s): 462 (currently: name:"Ashira (Eshkol 101)", height:70.0, floors:16, status:"Under Construction")
-- Proposed change: **correction to an earlier queue entry that wrongly logged this as a brand-new project** — it's already in RAW_DATA, matching the 16fl/70m half of the thread title exactly. Thread title is "35+16 FL | 136m+70m", so a second tower (35fl/136m) is missing entirely. Needs one new row: 35fl/136m, status likely "Under Construction" to match the existing row (title snippet shows progression from "Approved" to "U/C" — worth reconfirming both towers moved together).
-- Evidence: [Tel Aviv | Ashira (Eshkol 101) | 35+16 FL | 136m+70m | U/C](https://www.skyscrapercity.com/threads/tel-aviv-eshkol-101-35-16-fl-136m-70m-approved.2393181/)
-- Confidence: high on the split (existing row matches one half of the title exactly); medium on whether the new tower's status matches the existing row's "Under Construction".
-- Found: 2026-09-12 (original entry); corrected 2026-09-12 after Jonah caught the existing-row miss.
-
-## Sde Dov 306 (Tel Aviv) — new project
-- Row(s): none — new
-- Proposed change: add as a new entry (likely 2 rows): 13fl + 7fl, status Proposed.
-- Evidence: [Tel Aviv | Sde Dov 306 | 13+7 FL | Prop](https://www.skyscrapercity.com/threads/tel-aviv-sde-dov-306-13-7-fl-prop.2433641/)
-- Confidence: medium (plot number "306" vs. the "3xxx"-numbered plots elsewhere in Sde Dov — worth double-checking this isn't a typo/duplicate of an existing plot before adding as fully distinct).
-- Found: 2026-09-12
-
-## Sde Dov North (Kika Braz) (Tel Aviv) — unsplit-tower (partial gap)
-- Row(s): 590 (currently: floors:20, height:null, status:"Proposed")
-- Proposed change: current row only captures the 20fl building. Thread title is "40 + 20 FL" — need to add a second row for the missing 40fl tower, and confirm whether the existing row's status ("Proposed") still matches (title may have moved on).
-- Evidence: [Tel Aviv | Sde Dov North (Kika Braz) | 40 + 20 FL | Prop](https://www.skyscrapercity.com/threads/tel-aviv-sde-dov-north-kika-braz-40-20-fl-prop.2445083/)
-- Confidence: high that a tower is missing; needs a Claude-in-Chrome check for the 40fl tower's height in meters (not in the title).
-- Found: 2026-09-12
-
-## Eshkol 108 (Tel Aviv) — mixed height/floor pairing (existing row bug)
-- Row(s): 593 (currently: name:"Eshkol 108", height:141.0, floors:9, status:"Approved")
-- Proposed change: the row's `floors:9` doesn't match its own `height:141.0` — thread title is "Eshkol 108 | 37, 16, 4x9 FL | 141m", so 141m belongs to the 37fl tower, not a 9fl one. Likely needs a split into ~3 rows: 37fl/141m, 16fl/height unknown, 4x9fl/height unknown (4 separate low-rise buildings) — needs Claude-in-Chrome confirmation of the exact breakdown before editing.
-- Evidence: [Tel Aviv | Eshkol 108 | 37, 16, 4x9 FL | 141m | Approved](https://www.skyscrapercity.com/threads/tel-aviv-eshkol-108-37-16-4x9-fl-141m-prop.2431581/)
-- Confidence: high that the current row is wrong; medium on the exact correct split.
-- Found: 2026-09-12
-
-## Eshkol 109 (Tel Aviv) — mixed height/floor pairing (existing row bug)
-- Row(s): 466 (currently: name:"Eshkol 109", height:156.0, floors:10, status:"Under Construction")
-- Proposed change: `floors:10` doesn't match `height:156.0` — thread title is "Eshkol 109 | 42+10 FL | 156m | U/C" (an older snippet says "40+10 FL", so the exact floor count on the tall tower needs reconfirming), so 156m belongs to the ~40-42fl tower. Needs split into 2 rows: the tall tower (~40-42fl/156m) and the 10fl building (height likely lower/unknown).
-- Evidence: [Tel Aviv | Eshkol 109 | 42+10 FL | 156m | U/C](https://www.skyscrapercity.com/threads/tel-aviv-eshkol-109-42-10-fl-156m-u-c.2390686/)
-- Confidence: high that the current row is wrong; low-medium on exact floor count (conflicting snippets: 40 vs 42) — needs Claude-in-Chrome re-check.
-- Found: 2026-09-12
-
-## Eshkol 102 (Tel Aviv) — mixed height/floor pairing (existing row bug)
-- Row(s): 575 (currently: name:"Eshkol 102", height:130.0, floors:9, status:"Proposed")
-- Proposed change: `floors:9` doesn't match `height:130.0` — thread title is "Eshkol 102 | 36 + 3x9 FL | 130m", so 130m belongs to the 36fl tower. Needs split into 2 rows: 36fl/130m tower, and a 9fl building representing the 3x9fl low-rises (or 3 separate 9fl rows — needs confirmation on whether the 3 low-rises are meant to be one row or three).
-- Evidence: [Tel Aviv | Eshkol 102 | 36 + 3x9 FL | 130m | Prop](https://www.skyscrapercity.com/threads/tel-aviv-eshkol-102-36-3x9-fl-130m-prop.2431580/)
-- Confidence: high that the current row is wrong; medium on exact row split.
-- Found: 2026-09-12
-
-## Sde Dov 3208 (Tel Aviv) — mixed height/floor pairing (existing row bug)
-- Row(s): 555 (currently: name:"Sde Dov 3208", height:null, floors:7, status:"Proposed")
-- Proposed change: row is missing the tall tower entirely — thread title is "Sde Dov 3208 | 39 + 4x7 FL | Prop", so there's a 39fl tower not represented at all (only one of the 4x7fl low-rises is captured, and even that has no height). Needs split into 2 rows: 39fl tower (height unknown, needs lookup) + 7fl building representing the 4x7fl low-rises.
-- Evidence: [Tel Aviv | Sde Dov 3208 | 39 + 4x7 FL | Prop](https://www.skyscrapercity.com/threads/tel-aviv-sde-dov-3208-39-4x7-fl-prop.2448844/)
-- Confidence: high that a tower is missing; needs Claude-in-Chrome check for the 39fl tower's height and exact row-count convention for the 4x7fl group.
-- Found: 2026-09-12
-
-## Schiller Compound (Petah Tikva) — unsplit-tower
-- Row(s): 203 (currently: floors:27, height:null, status:"Approved")
-- Proposed change: existing row (27fl) matches one of two identical towers; thread title is "2x27 FL | Prop". Needs adding a second 27fl tower. Note: title snippet says status "Prop(osed)" while the existing row says "Approved" — worth a Claude-in-Chrome re-check of current thread status before applying, since these may disagree due to snippet staleness.
-- Evidence: [Petah Tikva | Schiller Compound | 2x27 FL | Prop](https://www.skyscrapercity.com/threads/petah-tikva-schiller-compound-2x27-fl-prop.2378739/)
-- Confidence: high on the tower count; medium on which status (Approved vs. Proposed) is current.
-- Found: 2026-09-12
+## Ashira (Eshkol 101) low-rises (Tel Aviv) — unsplit-tower, needs live check
+- Row(s): 462 (Tower 1, 16fl/70m), 959 (Tower 2, 35fl/136m) — both already correct as of 2026-09-15
+- Proposed change: the project's own marketing post describes 2 more buildings beyond the two towers already in RAW_DATA — low-rises at 7fl and 8fl (204 units combined, per the same post). Neither the thread title nor our data captures these. Height, exact status, and current construction stage unknown — needs a live Chrome check of the thread (not just the marketing post) before adding.
+- Evidence: [Tel Aviv | Ashira (Eshkol 101) | 35+16 FL | 136m+70m | U/C](https://www.skyscrapercity.com/threads/tel-aviv-ashira-eshkol-101-35-16-fl-136m-70m-u-c.2393181/) — post #5, Apr 2024, marketing description mentions "two 7+8 floor buildings" not reflected in the thread title.
+- Confidence: low (existence confirmed by the marketing post; height/status entirely unconfirmed).
+- Found: 2026-09-15
 
 ## Vertical (Bursa Triangle) (Ramat Gan) — unsplit-tower, needs live thread check
 - Row(s): 22 (currently: height:null, floors:111, status:"Planned")

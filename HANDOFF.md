@@ -1134,3 +1134,62 @@ section.
 14 entries remain in `REVIEW_QUEUE.md`: 8 "one detail to confirm" and 6
 "needs a live re-check" (Vertical/Bursa Triangle, Global Towers, She,
 Avraham Tower, Semel North, Landmark Towers Tower B).
+
+## 2026-09-15 (continued) — Applied the 8 "one detail to confirm" batch
+
+Checked each of the 8 medium-confidence entries against its live thread
+via Claude in Chrome, then applied all 8 (all resolved cleanly — no
+dead ends this round):
+
+- **Schiller Compound** (Petah Tikva) — the live thread title has moved
+  on to "Approved" (search snippet was stale, showed "Prop"), matching
+  the existing row already. Relabeled id 203 "(Tower 1)"; added id 958
+  "(Tower 2)", both 27fl, Approved.
+- **Ashira (Eshkol 101)** (Tel Aviv) — confirmed via the marketing post:
+  relabeled id 462 "(Tower 1)" (16fl/70m, unchanged); added id 959
+  "(Tower 2)" 35fl/136m, status Under Construction (matches the thread
+  tag and the existing tower). **Also discovered** the same post
+  describes 2 more buildings (7fl and 8fl low-rises) that neither the
+  thread title nor our data captures — added as a fresh, unconfirmed
+  `REVIEW_QUEUE.md` entry rather than guessing their status.
+- **Eshkol 109** (Tel Aviv) — live thread confirms 42fl (not 40, resolving
+  the earlier conflicting-snippet ambiguity), status Under Construction.
+  Id 466 corrected to 42fl/156m "(Tower 1)"; added id 960 "(Tower 2)"
+  10fl, height unknown, Under Construction.
+- **Eshkol 102** (Tel Aviv) — confirmed 36fl/130m tower + three 9fl
+  low-rises, status Proposed. Id 575 corrected to 36fl/130m "(Tower 1)";
+  added ids 965–967 as 3 separate 9fl "(Low-rise 1/2/3)", Proposed.
+- **Eshkol 108** (Tel Aviv) — confirmed 37fl/141m + 16fl + 4×9fl, status
+  now Approved (LPC approval, matches existing row). Id 593 corrected
+  to 37fl/141m "(Tower 1)"; added id 969 "(Tower 2)" 16fl; added ids
+  970–973 as 4 separate 9fl "(Low-rise 1–4)"; all Approved.
+- **Sde Dov 3208** (Tel Aviv) — confirmed 39fl tower + 4×7fl low-rises,
+  status Proposed (no height found for the 39fl tower). Relabeled id
+  555 "(Low-rise 1)" (7fl, unchanged); added id 961 "(Tower 1)" 39fl,
+  height unknown; added ids 962–964 as "(Low-rise 2/3/4)", 7fl each;
+  all Proposed.
+- **Sde Dov North (Kika Braz)** (Tel Aviv) — confirmed a second,
+  40fl tower (height not given), status Proposed. Relabeled id 590
+  "(Tower 1)" (20fl, unchanged); added id 968 "(Tower 2)" 40fl, height
+  unknown, Proposed. **Also noted**: the source post mentions "several
+  smaller residential and office buildings" beyond the two towers, with
+  no floor counts given — too vague to add; flagged in `CLAUDE.md` for
+  a future closer look if more detail ever surfaces.
+- **Sde Dov 306** (Tel Aviv) — confirmed as a genuine, distinct project
+  (offices/logistics/commercial, developer Israel Canada — not a typo
+  of the "3xxx"-numbered residential plots nearby). Confidence upgraded
+  from medium to high. Added as new: ids 974–975, 13fl and 7fl, both
+  Proposed, height unknown, placed at the shared Sde Dov cluster
+  coordinates (32.0834, 34.78072) alongside the other Sde Dov entries.
+
+Dataset now at 978 rows (960 + 18 new). Verified in the browser: no
+console errors, row count matches expected math.
+
+**New, unconfirmed finding added to `REVIEW_QUEUE.md`** (not applied):
+Ashira (Eshkol 101)'s 2 extra low-rise buildings (7fl and 8fl, per the
+same marketing post that confirmed the 35fl tower above) — height and
+current status unknown, needs its own check before adding.
+
+6 entries remain in `REVIEW_QUEUE.md`, all "needs a live re-check":
+Vertical/Bursa Triangle, Global Towers, She, Avraham Tower, Semel North,
+Landmark Towers Tower B — plus the new Ashira low-rises finding above.

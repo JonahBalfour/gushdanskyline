@@ -110,6 +110,21 @@ repo/session, not here, since this project only owns the standalone site.
       masterplan as rows at all). Vitania Towers and Reisdor Towers were
       resolved (see HANDOFF.md's 2026-09-12 and 2026-09-15 entries) and
       removed from this list.
+- [ ] `REVIEW_QUEUE.md` has 6 open entries, all "needs a live re-check"
+      (weakest tier — conflicting or missing evidence, don't act without
+      reading the actual thread first): Vertical/Bursa Triangle (Ramat
+      Gan), Global Towers (Petah Tikva), She (Tel Aviv), Avraham Tower
+      (Bat Yam), Semel North (Tel Aviv), Landmark Towers Tower B (Tel
+      Aviv) — plus one fresh unconfirmed finding: Ashira (Eshkol 101)'s
+      2 extra low-rise buildings (7fl + 8fl) mentioned in its marketing
+      post but not yet checked for status. See HANDOFF.md's 2026-09-15
+      entries for what's already been resolved out of this batch (19
+      entries applied so far across two rounds).
+- [ ] Sde Dov North (Kika Braz) (Tel Aviv): its source post mentions
+      "several smaller residential and office buildings" beyond the two
+      towers already in `RAW_DATA` (ids 590, 968), with no floor counts
+      given — too vague to add anything yet, but worth another look if
+      the thread gets more specific.
 - [ ] Duplicate `id` values in `RAW_DATA`: 928, 929, and 930 are each
       used twice — once for "22–28 Eilat EB (Tower 2/3)" and once for
       "Kalanit Towers (Tower 2/3/4)", from an earlier sweep that didn't
