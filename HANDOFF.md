@@ -1349,3 +1349,56 @@ content. Desktop is unaffected (bars still stretch to fill the full
 width via `flex-grow` when there's room). Verified at 375px (contained,
 scrollable, no page-level horizontal overflow) and at desktop width
 (pixel-identical to before) — no console errors either way.
+
+## 2026-09-15 (automation) — New daily thread-link backfill task; weekly sweep now checks for new/changed projects too
+
+Jonah wants all ~982 rows linked to their SkyscraperCity thread within
+~2 weeks (908 rows lacked one after the manual 74). Set up a new
+scheduled task, `gushdanskyline-link-backfill`, separate from the
+Sunday `gushdanskyline-weekly-sweep`:
+
+- Runs **daily at 2:00 PM local** — no Chrome/sleep-wake dependency
+  needed, since finding a citation URL (not verifying live data) is
+  reliably doable via WebSearch alone.
+- Targets **~65 rows/day** (908 ÷ 14), grouping rows by base name so
+  one search covers all of a multi-tower project's rows at once.
+- Edits `app.jsx` directly (unlike the review-queue sweep) — but the
+  *only* field it may ever touch is `url`; it's instructed to skip
+  (never guess) on any row it isn't confident about, and to flag
+  suspected data issues in its summary rather than fix them.
+- First run (manually triggered to pre-approve tools) completed
+  cleanly: 65 rows linked across 57 threads, 843 remain, only app.jsx
+  touched, committed as `dbffc5e`. It correctly skipped ~50 ambiguous
+  groups (floor-count mismatches, name collisions, no thread found)
+  and independently re-surfaced Avraham Tower as still unresolved,
+  consistent with the existing `REVIEW_QUEUE.md` entry.
+- Tightened its Bash allowlist after the first run used an
+  unauthorized-but-harmless `grep`/`sed` shell command that happened to
+  succeed — now explicitly told to use Read/Grep tools instead, same
+  discipline as the weekly sweep.
+
+Also restructured `gushdanskyline-weekly-sweep`: **discovery (new
+projects) and a status-drift sample are now required steps every
+week**, not "best-effort, time-permitting" as before. Reasoning: the
+existing `audit.py` checks only catch structural issues (unsplit
+towers, duplicates, missing heights) — nothing was systematically
+watching for brand-new threads or for existing rows whose status
+changed (we only caught Beyond/She's stale statuses via unrelated deep
+dives or an outside tip, not through any routine check). The new
+required steps:
+- **Discovery**: at least 6-8 varied WebSearch queries per run against
+  the Gush Dan/Tel Aviv sub-forums, and any plausible new project found
+  must actually be queued (not just mentioned in the summary).
+- **Status-drift sample**: ~15-20 rows per run that already have a
+  `url` and a non-terminal status (Proposed/Planned/Approved/Under
+  Construction), re-checked via WebSearch to see if the thread's
+  current status tag has moved on. This gets cheaper and more thorough
+  every week as the new daily task grows the pool of `url`-tagged rows
+  to sample from — the two tasks reinforce each other.
+
+Did not turn the review process into a formal Claude Code skill —
+discussed with Jonah, concluded it'd be a nice-to-have (mainly to avoid
+re-deriving methodology from CLAUDE.md/HANDOFF.md context in future
+interactive sessions) but not necessary, since the scheduled tasks'
+own prompts already encode the refined procedure for the unattended
+case.

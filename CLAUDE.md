@@ -88,6 +88,23 @@ repo/session, not here, since this project only owns the standalone site.
   (expires 2026-12-11), `https_enforced: true`, and `http://` now
   301-redirects to `https://`. Nothing further needed here.
 
+## Automated tasks
+
+Two scheduled tasks run against this project (see HANDOFF.md's
+2026-09-15 entries for full background):
+
+- **`gushdanskyline-weekly-sweep`** — Sundays ~2:00 AM. Runs `audit.py`,
+  works a structural-issue batch, and now also *requires* (not
+  best-effort) a discovery pass for new projects and a ~15-20 row
+  status-drift sample each week. Writes findings to `REVIEW_QUEUE.md`
+  only — never touches `app.jsx` directly.
+- **`gushdanskyline-link-backfill`** — daily at 2:00 PM, started
+  2026-09-15. Backfills the `url` field on `RAW_DATA` rows (~65/day,
+  target: all rows linked by ~2026-09-29) via WebSearch only, editing
+  `app.jsx` directly but *only* ever adding a `url` field — never
+  changes any other field, never guesses when unsure. Check progress
+  with `grep -c 'url:"' app.jsx` (139/982 as of 2026-09-15).
+
 ## Outstanding
 
 - [ ] Coordinate with the portfolio-site project to remove
