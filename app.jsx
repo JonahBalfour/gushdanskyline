@@ -1463,7 +1463,7 @@ const styles = {
   statSub: { fontSize: "11.5px", color: "#7A7360", marginTop: "4px", fontFamily: "'IBM Plex Mono', monospace" },
   panel: { border: "1px solid #D8D0BC", background: "#F4EFDF", marginBottom: "20px" },
   panelHead: { fontFamily: "'IBM Plex Mono', monospace", fontSize: "12px", color: "#4B5A63", padding: "10px 16px", borderBottom: "1px solid #D8D0BC" },
-  skyline: { display: "flex", alignItems: "flex-end", gap: "2px", height: "160px", padding: "16px 16px 0" },
+  skyline: { display: "flex", alignItems: "flex-end", gap: "2px", height: "160px", padding: "16px 16px 0", overflowX: "auto", overflowY: "hidden" },
   bar: { flex: "1 1 0", minWidth: "3px", borderTop: "1px solid #1C2A33" },
   skylineTooltip: { fontFamily: "'IBM Plex Mono', monospace", fontSize: "12.5px", padding: "8px 16px 14px", color: "#1C2A33", minHeight: "1.4em", boxSizing: "content-box" },
   filters: { display: "flex", gap: "10px", alignItems: "center", marginBottom: "20px", flexWrap: "wrap" },

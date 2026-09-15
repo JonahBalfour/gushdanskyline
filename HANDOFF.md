@@ -1334,3 +1334,18 @@ the new column.
 The other ~900 rows will pick up URLs opportunistically as future
 data-quality passes (weekly sweep, review-queue work) touch them —
 no dedicated backfill project planned.
+
+## 2026-09-15 (design, continued) — Fixed skyline chart overflow on narrow screens
+
+Jonah reported the bar chart overflows its box on mobile / narrow
+windows. Confirmed at 375px: the 90-bar flex row (each bar has
+`minWidth: 3px`, 2px gaps) needs ~750px minimum, but the container
+had no `overflow` handling, so bars visually bled out past the panel's
+right edge instead of scrolling or clipping. Fixed by adding
+`overflowX: "auto"` (and `overflowY: "hidden"`) to the `.skyline`
+container — it now scrolls horizontally within its own box on narrow
+viewports, same pattern the catalog table already uses for wide
+content. Desktop is unaffected (bars still stretch to fill the full
+width via `flex-grow` when there's room). Verified at 375px (contained,
+scrollable, no page-level horizontal overflow) and at desktop width
+(pixel-identical to before) — no console errors either way.
