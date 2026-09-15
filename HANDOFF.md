@@ -1402,3 +1402,26 @@ re-deriving methodology from CLAUDE.md/HANDOFF.md context in future
 interactive sessions) but not necessary, since the scheduled tasks'
 own prompts already encode the refined procedure for the unattended
 case.
+
+## 2026-09-15 (design, continued) — Click-to-jump replaces the tooltip's unreachable link
+
+Jonah caught a real usability bug: the "View thread" link added to the
+hover tooltip earlier today was unreachable in practice — moving the
+mouse from the bar down to the link fired the bar's `onMouseLeave`,
+hiding the tooltip before the click could land. His suggested fix:
+make clicking a bar jump to that project's row in the catalog table
+instead, where the row's own "View thread" link works fine (hovering
+within a row doesn't have the same dead-zone problem).
+
+Implemented: clicking a bar now forces the table's sort to
+height/descending (matching the skyline's own order, so a bar's
+position always matches its row's position in the sorted list),
+computes and jumps to the correct page, and smooth-scrolls the row
+into view with a distinct persistent gold highlight (`selected` state,
+separate from the transient `hovered` state so it survives the mouse
+leaving the bar). Removed the inline thread link from the tooltip
+entirely — it's now purely informational text, with a hint that
+clicking jumps to the full row. Verified: clicking a bar mid-list (not
+on the current page) correctly switches sort, jumps to the right page,
+and highlights/scrolls to the row; clicking a bar already on the
+current page just highlights it in place; no console errors.

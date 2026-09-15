@@ -1,4 +1,4 @@
-const { useState, useMemo } = React;
+const { useState, useMemo, useEffect } = React;
 
 const RAW_DATA = [
 {id:0,name:"Sha\'ar HaMada",city:"Rehovot",height:null,floors:18,status:"Topped Out",url:"https://www.skyscrapercity.com/threads/rehovot-shaar-hamada-18-fl-u-c.2377988/",lat:31.8822,lng:34.7969},
@@ -1036,6 +1036,7 @@ function GushDanSkyline() {
   const [page, setPage] = useState(0);
   const [pageSize, setPageSize] = useState(60);
   const [hovered, setHovered] = useState(null);
+  const [selected, setSelected] = useState(null);
   const [onlyCore, setOnlyCore] = useState(false);
 
   const scopedRows = useMemo(() => {
@@ -1117,6 +1118,22 @@ function GushDanSkyline() {
   }, [filtered]);
   const skylineMax = Math.max(...skylineData.map(b => b.height), 1);
 
+  function jumpToRow(id) {
+    // skylineData is `filtered` sorted by height desc (capped at 90) — forcing that
+    // same sort means a bar's index here also matches its row's index in `filtered`.
+    const idx = skylineData.findIndex((b) => b.id === id);
+    if (idx === -1) return;
+    if (sortKey !== "height" || sortDir !== "desc") { setSortKey("height"); setSortDir("desc"); }
+    setPage(Math.floor(idx / pageSize));
+    setSelected(id);
+  }
+
+  useEffect(() => {
+    if (selected === null) return;
+    const el = document.getElementById(`gd-row-${selected}`);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+  }, [selected, page]);
+
   const stats = useMemo(() => {
     const builtTall = RAW_DATA.filter(b => (b.status === "Completed" || b.status === "Topped Out") && b.height >= 150);
     const tallest = [...RAW_DATA].filter(b => b.height && b.status === "Completed").sort((a, b) => b.height - a.height)[0];
@@ -1189,16 +1206,18 @@ function GushDanSkyline() {
               key={b.id}
               onMouseEnter={() => setHovered(b.id)}
               onMouseLeave={() => setHovered(null)}
+              onClick={() => jumpToRow(b.id)}
               style={{
                 ...styles.bar,
                 height: `${(b.height / skylineMax) * 100}%`,
                 background: cityColor(b.city),
                 opacity: b.status === "Proposed" || b.status === "Planned" ? 0.35 : b.status === "Under Construction" ? 0.6 : 1,
                 borderStyle: (b.status === "Proposed" || b.status === "Planned") ? "dashed" : "solid",
-                outline: hovered === b.id ? "2px solid #1C2A33" : "none",
+                outline: hovered === b.id || selected === b.id ? "2px solid #1C2A33" : "none",
                 outlineOffset: "1px",
+                cursor: "pointer",
               }}
-              title={`${b.name} — ${b.height} m`}
+              title={`${b.name} — ${b.height} m — click to jump to its row below`}
             />
           ))}
         </div>
@@ -1206,18 +1225,9 @@ function GushDanSkyline() {
           {hovered !== null && skylineData.find((b) => b.id === hovered)
             ? (() => {
                 const b = skylineData.find((x) => x.id === hovered);
-                return (
-                  <>
-                    {`${b.name} — ${b.height} m, ${b.floors ?? "?"} floors, ${b.city} (${b.status})`}
-                    {b.url && (
-                      <a href={b.url} target="_blank" rel="noopener noreferrer" style={{ ...styles.threadLink, marginLeft: "10px" }}>
-                        View thread ↗
-                      </a>
-                    )}
-                  </>
-                );
+                return `${b.name} — ${b.height} m, ${b.floors ?? "?"} floors, ${b.city} (${b.status}) — click to jump to its row below`;
               })()
-            : "Hover a bar (or a row below) for details"}
+            : "Hover a bar (or a row below) for details, click a bar to jump to its row"}
         </div>
       </section>
 
@@ -1291,10 +1301,17 @@ function GushDanSkyline() {
               {paged.map((b, i) => (
                 <tr
                   key={b.id}
+                  id={`gd-row-${b.id}`}
                   className="gd-row"
                   onMouseEnter={() => setHovered(b.id)}
                   onMouseLeave={() => setHovered(null)}
-                  style={hovered === b.id ? { background: "#F4EFDF" } : undefined}
+                  style={
+                    selected === b.id
+                      ? { background: "#C9932E33", outline: "2px solid #C9932E", outlineOffset: "-2px" }
+                      : hovered === b.id
+                      ? { background: "#F4EFDF" }
+                      : undefined
+                  }
                 >
                   <td style={{ ...styles.td, textAlign: "right", fontFamily: "IBM Plex Mono, monospace", color: "#7A7360" }}>{page * pageSize + i + 1}</td>
                   <td style={styles.td}>{b.name}</td>
