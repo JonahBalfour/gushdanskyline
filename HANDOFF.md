@@ -1426,54 +1426,88 @@ on the current page) correctly switches sort, jumps to the right page,
 and highlights/scrolls to the row; clicking a bar already on the
 current page just highlights it in place; no console errors.
 
-## 2026-09-20/24 — Weekly sweep reliability: dropped Claude in Chrome entirely
+## 2026-09-20/24 — Weekly sweep reliability: full debugging saga (4 root causes found and fixed)
 
-Root-caused two separate automation failures over several days of
-debugging:
+This entry supersedes an earlier same-day version of itself that only
+covered the first of what turned out to be four separate bugs. The
+weekly sweep had *never once* completed successfully as an unattended
+scheduled task — every prior "successful" result in this changelog
+actually came from an interactive session, not the real Sunday cron
+fire. Getting it to genuinely finish unattended took four rounds of
+find-a-bug/fix-it/re-trigger, each round only surfacing once the
+previous blocker was cleared:
 
 1. **Zombied "running" sessions silently block all future scheduled
    fires of that task**, indefinitely, until a human notices and stops
    them. This explains both the weekly sweep never firing on its real
    Sunday schedule and the daily backfill silently stalling for
-   several days — in each case an earlier run got stuck (hung on a
-   disallowed shell command, or on a Claude-in-Chrome `navigate` call)
-   and just sat in "running" state forever, silently eating every
-   subsequent scheduled fire. `get_session`'s `lastActivityAt`
-   heartbeat is not reliable for detecting this — it can report a
-   near-current timestamp even when the session's actual transcript
-   has been frozen for a long time; the only reliable check is reading
-   the raw transcript JSONL directly and comparing real tool-call
-   timestamps against wall-clock time.
+   several days — in each case an earlier run got stuck and just sat
+   in "running" state forever, silently eating every subsequent
+   scheduled fire. `get_session`'s `lastActivityAt` heartbeat is not
+   reliable for detecting this — it can report a near-current
+   timestamp even when the session's actual transcript has been frozen
+   for a long time; the only reliable check is reading the raw
+   transcript JSONL directly (`~/.claude/projects/<project>/*.jsonl`,
+   matched to a session by its enqueue timestamp) and comparing real
+   tool-call timestamps against wall-clock time (`date -u`).
 2. **Claude-in-Chrome `navigate` is fundamentally unreliable in
    unattended (scheduled-task) contexts** — confirmed across 5 real
    attempts on Sept 20 and Sept 24. Behavior was inconsistent run to
    run: sometimes it worked, sometimes it hung for ~5.5 minutes before
    cleanly erroring ("Chrome extension is not connected"), sometimes
    it hung indefinitely (11+ minutes, no response) even on a retry.
-   This is not a prompt-engineering problem — it doesn't reproduce in
-   interactive sessions, only unattended ones.
+   Fix: **removed Claude in Chrome from `gushdanskyline-weekly-sweep`
+   entirely** — it's now WebSearch-only, matching the already-reliable
+   `gushdanskyline-link-backfill` task. Candidates WebSearch alone
+   can't confirm now get queued as **low-confidence**, flagged for a
+   future interactive Claude-in-Chrome check instead.
+3. **Banning one specific ad-hoc Bash command doesn't stop the model
+   from inventing a different one for the same step.** After fix (2),
+   test run 1 (`local_0f28e3c0`) hung on `grep ... | shuf
+   --random-source=<(yes 42)` while sampling rows for the status-drift
+   check (SKILL.md step 5) — not a Chrome issue at all, the same
+   old "ad-hoc Bash outside the allowlist hangs forever" failure in a
+   step that had never been patched. Patched SKILL.md to forbid
+   `shuf`/`sort -R` by name and re-triggered; test run 2
+   (`local_1a904cb7`) hung on the *exact same step* via a *different*
+   invented pipeline (`grep ... | grep ... > file && wc -l && awk
+   'NR%13==1'`) — proving whack-a-mole command-banning doesn't work.
+   Fix: rewrote the tool-discipline section to categorically ban ALL
+   Bash calls in steps 2-6 (not individual utilities), and pointed out
+   that even a *legitimate* allowed command (e.g. `git add
+   REVIEW_QUEUE.md`) silently stops matching the settings.json
+   allowlist the moment it's wrapped in `cd "..." && ...` — the
+   allowlist matches on exact command text, so any prefix breaks it.
+4. **The actual permission allowlist had a real gap, separate from
+   prompt wording.** With (3) fixed, test run 3 (`local_bcd91294`) got
+   past step 5 for the first time ever — then hung at step 6 on the
+   **Edit** tool writing to `REVIEW_QUEUE.md`. Root cause:
+   `.claude/settings.json` had `Edit(app.jsx)` but never
+   `Edit(REVIEW_QUEUE.md)` — the one file this entire task exists to
+   write to. No unattended run had ever survived long enough to expose
+   this before; every earlier "successful" REVIEW_QUEUE.md write in
+   this changelog was from an interactive Claude Code session with
+   its own standing permissions, not from the scheduled task itself.
+   Fix: added `Edit(REVIEW_QUEUE.md)` and `Read(REVIEW_QUEUE.md)` to
+   the allowlist.
 
-Fix for (1): tightened both tasks' Bash allowlists further (only the
-exact 3-4 commands each task actually needs; everything else must go
-through Read/Grep) and allowlisted `Bash(grep *)` directly in
-`.claude/settings.json` as a narrow, safe carve-out, since ad-hoc
-shell commands kept slipping through prompt-only prohibitions. Also
-explicitly forbade `git commit --amend`/`git show`/etc. in both task
-prompts — a wrong commit-message row count is harmless; a hung git
-command that blocks all future runs is not.
-
-Fix for (2): **removed Claude in Chrome from `gushdanskyline-weekly-sweep`
-entirely** — it's now WebSearch-only, matching the already-reliable
-`gushdanskyline-link-backfill` task (which was WebSearch-only from the
-start and has never had this problem). Candidates that WebSearch alone
-can't confirm now get queued as **low-confidence** entries flagged for
-a future interactive Claude-in-Chrome check, instead of the task
-trying to check them itself. Test-triggered the patched task on
-2026-09-24 to confirm the fix holds.
+Test run 4 (`local_6f74692d`), after all four fixes, got all the way
+through discovery, past step 5's sampling, and into step 6 (it had
+successfully Read `REVIEW_QUEUE.md` and was about to Edit it) before
+hitting the **account's session usage limit** for the day (resets
+4:50pm Asia/Jerusalem) — an artifact of today's heavy testing (4 sweep
+triggers plus a full day of interactive work), not a bug. Importantly,
+it ended cleanly (`isRunning: false`, no zombie session, no partial
+file corruption) rather than hanging — a good sign that the earlier
+hang-prone failure modes are actually gone. A fully clean end-to-end
+completion (reaching step 7's commit/push) is still unconfirmed as of
+this entry; the next real Sunday fire (or another manual test after
+the usage reset) will be the first true test of all four fixes
+together.
 
 Also manually re-added 5 review-queue findings that were discovered
-during the failed Sept 20/24 sweep attempts but never written to
-`REVIEW_QUEUE.md` (every attempt died before reaching the commit
+during the original failed Sept 20/24 sweep attempts but never written
+to `REVIEW_QUEUE.md` (every attempt died before reaching the commit
 step): **Enav Tower** (Bnei Brak, new, 5x6+1x61 fl), **Herzl 130**
 (Rishon LeZion, new, 16 fl), **Amot 1000** (Rishon LeZion, new, 15 fl),
 **Jabotinsky-HaMatmid-Le'an EB** (Ramat Gan, row 82 — turns out to be
