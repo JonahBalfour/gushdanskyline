@@ -97,7 +97,11 @@ Two scheduled tasks run against this project (see HANDOFF.md's
   works a structural-issue batch, and now also *requires* (not
   best-effort) a discovery pass for new projects and a ~15-20 row
   status-drift sample each week. Writes findings to `REVIEW_QUEUE.md`
-  only — never touches `app.jsx` directly.
+  only — never touches `app.jsx` directly. WebSearch-only since
+  2026-09-24 (Claude in Chrome was dropped — proved unreliable in
+  unattended runs, see HANDOFF.md's 2026-09-20/24 entry); candidates
+  it can't confirm from a thread title alone get queued as
+  low-confidence, needing an interactive Claude-in-Chrome check.
 - **`gushdanskyline-link-backfill`** — daily at 2:00 PM, started
   2026-09-15. Backfills the `url` field on `RAW_DATA` rows (~65/day,
   target: all rows linked by ~2026-09-29) via WebSearch only, editing

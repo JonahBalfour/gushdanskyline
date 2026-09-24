@@ -1425,3 +1425,59 @@ clicking jumps to the full row. Verified: clicking a bar mid-list (not
 on the current page) correctly switches sort, jumps to the right page,
 and highlights/scrolls to the row; clicking a bar already on the
 current page just highlights it in place; no console errors.
+
+## 2026-09-20/24 — Weekly sweep reliability: dropped Claude in Chrome entirely
+
+Root-caused two separate automation failures over several days of
+debugging:
+
+1. **Zombied "running" sessions silently block all future scheduled
+   fires of that task**, indefinitely, until a human notices and stops
+   them. This explains both the weekly sweep never firing on its real
+   Sunday schedule and the daily backfill silently stalling for
+   several days — in each case an earlier run got stuck (hung on a
+   disallowed shell command, or on a Claude-in-Chrome `navigate` call)
+   and just sat in "running" state forever, silently eating every
+   subsequent scheduled fire. `get_session`'s `lastActivityAt`
+   heartbeat is not reliable for detecting this — it can report a
+   near-current timestamp even when the session's actual transcript
+   has been frozen for a long time; the only reliable check is reading
+   the raw transcript JSONL directly and comparing real tool-call
+   timestamps against wall-clock time.
+2. **Claude-in-Chrome `navigate` is fundamentally unreliable in
+   unattended (scheduled-task) contexts** — confirmed across 5 real
+   attempts on Sept 20 and Sept 24. Behavior was inconsistent run to
+   run: sometimes it worked, sometimes it hung for ~5.5 minutes before
+   cleanly erroring ("Chrome extension is not connected"), sometimes
+   it hung indefinitely (11+ minutes, no response) even on a retry.
+   This is not a prompt-engineering problem — it doesn't reproduce in
+   interactive sessions, only unattended ones.
+
+Fix for (1): tightened both tasks' Bash allowlists further (only the
+exact 3-4 commands each task actually needs; everything else must go
+through Read/Grep) and allowlisted `Bash(grep *)` directly in
+`.claude/settings.json` as a narrow, safe carve-out, since ad-hoc
+shell commands kept slipping through prompt-only prohibitions. Also
+explicitly forbade `git commit --amend`/`git show`/etc. in both task
+prompts — a wrong commit-message row count is harmless; a hung git
+command that blocks all future runs is not.
+
+Fix for (2): **removed Claude in Chrome from `gushdanskyline-weekly-sweep`
+entirely** — it's now WebSearch-only, matching the already-reliable
+`gushdanskyline-link-backfill` task (which was WebSearch-only from the
+start and has never had this problem). Candidates that WebSearch alone
+can't confirm now get queued as **low-confidence** entries flagged for
+a future interactive Claude-in-Chrome check, instead of the task
+trying to check them itself. Test-triggered the patched task on
+2026-09-24 to confirm the fix holds.
+
+Also manually re-added 5 review-queue findings that were discovered
+during the failed Sept 20/24 sweep attempts but never written to
+`REVIEW_QUEUE.md` (every attempt died before reaching the commit
+step): **Enav Tower** (Bnei Brak, new, 5x6+1x61 fl), **Herzl 130**
+(Rishon LeZion, new, 16 fl), **Amot 1000** (Rishon LeZion, new, 15 fl),
+**Jabotinsky-HaMatmid-Le'an EB** (Ramat Gan, row 82 — turns out to be
+an unsplit 7-tower complex, our row only captured one 11 fl tower),
+and **Bursa Towers** (Ramat Gan, new, 520m/120+88+77 fl). Re-verified
+all five against their actual SkyscraperCity thread titles via
+WebSearch before queuing.
