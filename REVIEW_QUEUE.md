@@ -35,3 +35,38 @@ acting on them, not just a title/search-snippet read.
 - Evidence: municipal planning documents confirm the real project and its scale; no SkyscraperCity thread URL found yet.
 - Confidence: low (project better identified than before, but still no primary-source thread to confirm against, and the relationship to our existing row is unclear).
 - Found: 2026-09-13; re-attempted 2026-09-15, still unresolved.
+
+## Enav Tower (Bnei Brak) — new project
+- Row(s): none — new
+- Proposed change: add a new project. Urban renewal in Bnei Brak's business district: 9 residential buildings (153 apartments) being demolished/rebuilt as 5 residential buildings (5x6 fl) plus a 61-floor office/commercial tower.
+- Evidence: [SkyscraperCity thread](https://www.skyscrapercity.com/threads/bnei-brak-enav-tower-5x6-fl-1x61-fl-approved.2327705/) — "Bnei Brak | Enav Tower | 5x6 fl + 1x61 FL | Approved".
+- Confidence: high (thread title is unambiguous).
+- Found: 2026-09-20/24 (discovered during a weekly-sweep discovery pass that failed before it could be queued; re-verified 2026-09-24).
+
+## Herzl 130 (Rishon LeZion) — new project
+- Row(s): none — new
+- Proposed change: add a new project, 16 fl, status Planned.
+- Evidence: [SkyscraperCity thread](https://www.skyscrapercity.com/threads/rishon-lezion-herzl-130-16-fl-planned.2377064/) — "Rishon Lezion | Herzl 130 | 16 FL | Planned".
+- Confidence: high.
+- Found: 2026-09-20/24 (discovered during a weekly-sweep discovery pass that failed before it could be queued; re-verified 2026-09-24).
+
+## Amot 1000 (Rishon LeZion) — new project
+- Row(s): none — new
+- Proposed change: add a new project, 15 fl, status Planned. Office tower for a new CBD in Rishon LeZion.
+- Evidence: [SkyscraperCity thread](https://www.skyscrapercity.com/threads/rishon-lezion-amot-1000-15-fl-planned.2221658/) — "Rishon LeZion | Amot 1000 | 15 FL | Planned".
+- Confidence: high.
+- Found: 2026-09-20/24 (discovered during a weekly-sweep discovery pass that failed before it could be queued; re-verified 2026-09-24).
+
+## Jabotinsky-HaMatmid-Le'an EB (Ramat Gan) — unsplit-tower
+- Row(s): 82 (currently: single row, height:null, floors:11, status:"Proposed", already has url)
+- Proposed change: split into 7 rows matching the thread's breakdown — 1x34 fl, 1x22 fl, 2x14 fl, 3x11 fl (our existing row apparently only captured one of the 11 fl towers). Needs height data per tower if available in the thread body (title only gives floor counts).
+- Evidence: [SkyscraperCity thread](https://www.skyscrapercity.com/threads/ramat-gan-jabotinsky-hamatmid-lean-eb-34-22-2x14-3x11-fl-prop.2426685/) — "Ramat Gan | Jabotinsky-HaMatmid-Le'an EB | 34, 22, 2x14, 3x11 FL | Prop".
+- Confidence: high on the split being needed (title is explicit); low on per-tower heights (title doesn't give them — needs a Claude-in-Chrome check of the thread body/renders).
+- Found: 2026-09-20/24 (discovered during a weekly-sweep structural-issue pass that failed before it could be queued; re-verified 2026-09-24).
+
+## Bursa Towers (Ramat Gan) — new project
+- Row(s): none — new
+- Proposed change: add as 3 new rows (multi-tower complex): 120 fl, 88 fl, 77 fl, tallest at 520m. Status Approved/Proposed (title shows "App"). Bursa CBD, designed by Yashar Architecture.
+- Evidence: [SkyscraperCity thread](https://www.skyscrapercity.com/threads/ramat-gan-bursa-towers-520m-1706ft-120-fl-88-fl-77-fl-app.2291098/) — "RAMAT GAN | Bursa Towers | 520m | 1706ft | 120 fl | 88 fl | 77 fl | App".
+- Confidence: high on the project and floor counts; medium on height (520m given for tallest tower only — heights for the other two towers need checking against the thread body).
+- Found: 2026-09-20/24 (discovered during a weekly-sweep discovery pass that failed before it could be queued; re-verified 2026-09-24).
