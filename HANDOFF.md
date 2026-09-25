@@ -1499,11 +1499,17 @@ hitting the **account's session usage limit** for the day (resets
 triggers plus a full day of interactive work), not a bug. Importantly,
 it ended cleanly (`isRunning: false`, no zombie session, no partial
 file corruption) rather than hanging — a good sign that the earlier
-hang-prone failure modes are actually gone. A fully clean end-to-end
-completion (reaching step 7's commit/push) is still unconfirmed as of
-this entry; the next real Sunday fire (or another manual test after
-the usage reset) will be the first true test of all four fixes
-together.
+hang-prone failure modes are actually gone.
+
+**Update 2026-09-25 — confirmed fully fixed.** Test run 5
+(`local_8c37aa49`), triggered the next day after the usage reset,
+completed the entire task end to end for the first time ever: audit
+pass, discovery, structural-issue batch, status-drift sample, wrote 25
+well-formed entries to `REVIEW_QUEUE.md` (a healthy mix of unsplit-tower
+splits, new projects, and status corrections, each cited against a real
+current thread title), committed, and pushed cleanly as `d439bc5`
+("Weekly sweep: 25 new review-queue entries"). All four fixes above are
+now considered genuinely resolved, not just "probably fixed."
 
 Also manually re-added 5 review-queue findings that were discovered
 during the original failed Sept 20/24 sweep attempts but never written
