@@ -253,3 +253,215 @@ acting on them, not just a title/search-snippet read.
 - Evidence: [thread](https://www.skyscrapercity.com/threads/petah-tikva-cinema-heichal-eb-30-fl-prop.2390890/) — "Petah Tikva | Cinema Heichal EB | 30 FL | Prop".
 - Confidence: low (direction of drift unclear; needs a thread-body check).
 - Found: 2026-09-25
+
+<!-- ===== Weekly sweep 2026-09-27 ===== -->
+
+## Beit Hadar EB (Tel Aviv) — unsplit-tower
+- Row(s): 650 (currently: height:null, floors:16, status:"Approved", no url)
+- Proposed change: our single row only has the 16fl building. Add 2 towers at 39fl/180m, both Approved, and relabel 650 as the 16fl building. The OP describes "2 towers and 3 midrises", so there may be 2 more midrises the title doesn't list.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/tel-aviv-beit-hadar-eb-2x39-16-fl-2x180m-approved.2430970/) — "Tel Aviv | Beit Hadar EB | 2x39 + 16 FL | 2x180m | Approved". Also add url.
+- Confidence: high on the 2x39fl/180m towers; low on the extra midrises (needs a Claude-in-Chrome check).
+- Found: 2026-09-27
+
+## Hannah Szenes EB (Givatayim) — unsplit-tower
+- Row(s): 297 (currently: height:null, floors:11, status:"Proposed", has url)
+- Proposed change: split into 10 rows: 2x49fl, 4x16fl, 4x11fl, all Proposed. The two 49fl towers are missing entirely right now.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/givatayim-hannah-szenes-eb-2x49-4x16-4x11-fl-prop.2420419/) — "Givatayim | Hannah Szenes EB | 2x49, 4x16, 4x11 FL | Prop".
+- Confidence: high.
+- Found: 2026-09-27
+
+## Krinitsi Nahalat Yosef (Ramat Gan) — unsplit-tower
+- Row(s): 89 (currently: height:null, floors:11, status:"Approved", has url)
+- Proposed change: add a 40fl tower row, Approved. Relabel 89 as the 11fl building.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/ramat-gan-krinitsi-nahalat-yosef-40-11-fl-approved.2443822/) — "Ramat Gan | Krinitsi Nahalat Yosef | 40+11 FL | Approved".
+- Confidence: high.
+- Found: 2026-09-27
+
+## Metro City Hall HeHatzav (Petah Tikva) — unsplit-tower
+- Row(s): 81 (currently: height:null, floors:9, status:"Proposed", has url)
+- Proposed change: add 33fl and 27fl rows, both Proposed. Relabel 81 as the 9fl building.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/petah-tikva-metro-city-hall-hehatzav-33-27-9-fl-proposed.2449005/) — "Petah Tikva | Metro City Hall HeHatzav | 33 + 27 + 9 fl" (slug: proposed; posted Apr 2026).
+- Confidence: high.
+- Found: 2026-09-27
+
+## Phoenix Campus (Rishon LeZion) — unsplit-tower + status
+- Row(s): 40 (currently: height:null, floors:10, status:"Topped Out", has url)
+- Proposed change: split into 5 rows: 3x23fl + 2x10fl. The current title still reads U/C for the whole campus. Our row's "Topped Out" may apply only to the 10fl buildings. Suggest 2x10fl Topped Out (keep existing) + 3x23fl Under Construction, unless the thread body says otherwise.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/rishon-lezion-phoenix-campus-3x23-2x10-fl-u-c.2368079/) — "Rishon LeZion | Phoenix Campus | 3x23, 2x10 FL | U/C". Search summary: five buildings, two of them Phoenix HQ.
+- Confidence: high on the split; low on per-building status.
+- Found: 2026-09-27
+
+## 21-25 HaPodim (Ramat Gan) — unsplit-tower
+- Row(s): 185 (currently: height:null, floors:10, status:"Proposed", has url)
+- Proposed change: add a 20fl row, Proposed. Relabel 185 as the 10fl building.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/ramat-gan-21-25-hapodim-20-10-fl-prop.2440074/) — "Ramat Gan | 21-25 HaPodim | 20+10 FL | Prop".
+- Confidence: high.
+- Found: 2026-09-27
+
+## Shuster Nahalat Ganim (Ramat Gan) — unsplit-tower + status check
+- Row(s): 164 (currently: height:null, floors:8, status:"Completed", has url)
+- Proposed change: add a 24fl row. Current title says U/C for the project. Our "Completed" may apply only to the 8fl building, or it may be wrong. Suggest the 24fl tower be Under Construction.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/ramat-gan-shuster-nahalat-ganim-24-8-fl-u-c.2305458/) — "Ramat Gan | Shuster Nahalat Ganim | 24 & 8 fl | U/C".
+- Confidence: high on the 24fl tower existing; low on statuses.
+- Found: 2026-09-27
+
+## Maarava (Rehovot) — unsplit-tower
+- Row(s): 188 (currently: height:null, floors:10, status:"Under Construction", has url)
+- Proposed change: split into 4 rows: 2x20fl + 2x10fl, all Under Construction.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/rehovot-maarava-2-x-20-2-x-10-fl-u-c.2440271/) — "Rehovot | Maarava | 2 x 20 + 2 x 10 FL | U/C".
+- Confidence: high.
+- Found: 2026-09-27
+
+## 2-8 Aminadav (Tel Aviv) — unsplit-tower + missing height
+- Row(s): 610 (currently: height:null, floors:35, status:"Proposed", has url)
+- Proposed change: split into 2 rows, both 35fl/180m, Proposed.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/tel-aviv-2-8-aminadav-2x35-fl-2x180m-prop.2377985/) — "Tel Aviv | 2-8 Aminadav | 2x35 FL | 2x180m | Prop". Note: 180m for 35fl is tall per floor. Worth a glance at the thread before applying, but it's what the title says.
+- Confidence: high on the split; medium on the height.
+- Found: 2026-09-27
+
+## Rozio HaPodim (Ramat Gan) — unsplit-tower
+- Row(s): 294 (currently: height:null, floors:23, status:"Proposed", has url)
+- Proposed change: split into 2 rows, both 23fl, Proposed.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/ramat-gan-rozio-hapodim-2x23-fl-prop.2420836/) — "Ramat Gan | Rozio HaPodim | 2x23 FL | Prop".
+- Confidence: high.
+- Found: 2026-09-27
+
+## More unsplit multi-building rows (2026-09-27 batch) — unsplit-tower
+- Row(s): each row below currently has one entry, but its thread title (confirmed in this sweep's search results unless noted) lists several buildings:
+  - **Gindi Samuel** (Givat Shmuel, 54, 22fl Approved): "9+22 FL | Approved". Add the 9fl midrise ([thread](https://www.skyscrapercity.com/threads/givat-shmuel-gindi-samuel-9-22-fl-approved.2425465/))
+  - **Tidhar Giborim** (Bat Yam, 38, 28fl U/C): "28 fl + 25 fl | U/C". Add 25fl, U/C ([thread](https://www.skyscrapercity.com/threads/bat-yam-tidhar-giborim-28-fl-25-fl-u-c.2378685/))
+  - **Katzenelson EB** (Givatayim, 356, 9fl Proposed): "2x25, 2x11, 3x9 FL | Prop". The two 25fl towers are missing ([thread](https://www.skyscrapercity.com/threads/givatayim-katzenelson-eb-2x25-2x11-3x9-fl-prop.2390413/))
+  - **13-31 Katzenelson** (Givatayim, 333, 20fl Proposed): "2x20 FL | Prop" ([thread](https://www.skyscrapercity.com/threads/givatayim-13-31-katzenelson-2x20-fl-prop.2399522/))
+  - **Aplaton-Harif EB** (Tel Aviv, 614, 19fl Approved, no url): "2x10 + 19 FL | Approved" ([thread](https://www.skyscrapercity.com/threads/tel-aviv-aplaton-harif-eb-2x10-19-fl-approved.2388403/))
+  - **Lodz EB** (Tel Aviv, 658, 8fl Approved, no url): "3x19 + 7x8 FL | Approved". The three 19fl buildings are missing ([thread](https://www.skyscrapercity.com/threads/tel-aviv-lodge-eb-3x19-7x8-fl-approved.2428753/))
+  - **Herzl-Ya'akov EB** (Rehovot, 226, 22fl Proposed, no url): "2x22 FL | Prop" ([thread](https://www.skyscrapercity.com/threads/rehovot-herzl-yaakov-eb-2x22-fl-prop.2432158/))
+  - **Givat Shmuel City Gate** (Givat Shmuel, 65, 29fl Topped Out): "22, 23, 29 FL | U/C". Add the 22fl and 23fl buildings; their status is probably U/C ([thread](https://www.skyscrapercity.com/threads/givat-shmuel-givat-shmuel-city-gate-22-23-29-fl-u-c.2394834/))
+  - **HaHistadrut–Shenkar E–B** (Holon, 195, 40fl Approved): "2 x 40 fl | Approved" ([thread](https://www.skyscrapercity.com/threads/holon-hahistadrut-shenkar-e-b-2-x-40-fl-approved.2437563/))
+  - **Aba Hillel Bialik SE** (Ramat Gan): "25 FL + 2x10 FL | Approved". Not found in RAW_DATA under this name, so this may be a new project rather than a split ([thread](https://www.skyscrapercity.com/threads/ramat-gan-aba-hillel-bialik-se-25-fl-2x10-fl-approved.2368769/))
+  - From stored url slugs only (not re-checked against current titles this run): Landa and Vitania Campus (42, "16-6-fl"), HaTikva-Ma'ale HaShoeva EB (256, "2x35"), Enav New (227, "3x21"), HaNevi'im 53 (230, "2-x-20"), Ela Yam (74, "27-fl-26-fl"), Gissin Park (138, "3x6 + 26"), Brizo Park HaYam (140, "2-x-20–22").
+- Proposed change: split each one per its title.
+- Evidence: thread titles as linked above.
+- Confidence: high for the search-confirmed titles; medium for the slug-only list (slugs can be stale).
+- Found: 2026-09-27
+
+## Bruriya Complex (Ramat Gan) — new project
+- Row(s): none — new
+- Proposed change: add 3 rows: 40fl + 2x29fl, Proposed. About 500 apartments at Bialik St. 140-152; developer Tidhar, architect MYS.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/ramat-gan-bruriya-complex-40-fl-2-x-29-fl-prop.2400711/) — "Ramat-Gan | Bruriya Complex | 40 fl + 2 x 29 fl | Prop".
+- Confidence: high.
+- Found: 2026-09-27
+
+## Central Point / Central Point Towers (Ramat Gan) — new project
+- Row(s): none — new. HANDOFF.md mentions "the proposed Central Point Towers" as already in the dataset, but no row by that name exists in RAW_DATA now.
+- Proposed change: add, Proposed. There are two threads: "Central Point | 80 (100) fl | Prop" (ICR Israel Canada, Mann Shinar, across from Sapir Tower) and "Central Point Towers | 100+? FL | Prop". These may be one project with a tower count that isn't clear yet.
+- Evidence: [Central Point](https://www.skyscrapercity.com/threads/ramat-gan-central-point-80-100-fl-prop.2395478/); [Central Point Towers](https://www.skyscrapercity.com/threads/ramat-gan-central-point-towers-100-fl-prop.2395477/).
+- Confidence: low (two threads with adjacent ids, and floors unsettled at 80 vs 100; needs a Claude-in-Chrome check).
+- Found: 2026-09-27
+
+## Opatoshu Leyvik EB (Tel Aviv) — new project
+- Row(s): none — new
+- Proposed change: add 4 rows: 33fl/121m + 3x10fl, Approved. Kiryat Shalom, on Kibbutz Galuyot, MYS Architects.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/tel-aviv-opatoshu-leyvik-eb-33-3x10-fl-121m-approved.2382265/) — "Tel Aviv | Opatoshu Leyvik EB | 33 + 3x10 FL | 121m | Approved".
+- Confidence: high.
+- Found: 2026-09-27
+
+## Ha'Argazim EB / Golomb mi-Salant EB (Tel Aviv) — new project (range-only)
+- Row(s): none — new
+- Proposed change: both are approved EBs given only as floor ranges: "Ha'Argazim EB | 9-33 FL | Approved" and "Golomb mi-Salant EB | 7-25 FL | Approved". They have the same schema problem as the Hagag Einstein and Ha-Umanim range masterplans. At minimum, the tallest building of each (33fl, 25fl) could be added as one row, pending a decision on how to handle range-only projects.
+- Evidence: [Ha'Argazim](https://www.skyscrapercity.com/threads/tel-aviv-haargazim-eb-9-33-fl-approved.2336374/); [Golomb mi-Salant](https://www.skyscrapercity.com/threads/tel-aviv-golomb-mi-salant-eb-7-25-fl-approved.2336376/).
+- Confidence: medium (projects clear; per-building breakdown not in the titles).
+- Found: 2026-09-27
+
+## Shlomo Sixt Towers (Petah Tikva) — new project (range-only)
+- Row(s): none — new
+- Proposed change: add, Planned. There are 6 towers between 20 and 45fl (mixed use: offices, residential, hotel, assisted living) near HaSivim St on the Givat Shmuel border. The title gives no per-tower breakdown.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/petah-tikva-shlomo-sixt-towers-6-x-20-45-fl-planning.2365115/) — "Petah Tikva | Shlomo Sixt Towers | 6 x 20-45 FL | Planning".
+- Confidence: medium (project clear; breakdown needs a Claude-in-Chrome check).
+- Found: 2026-09-27
+
+## Unik Top (Rishon LeZion) — new project
+- Row(s): none — new (we have "Unik Cardo", "Unik Cardo Nachalat Yehuda", "Unik Park", and "Unik View", but not Unik Top)
+- Proposed change: add 4 rows, 20–26fl range, U/C per the title. Likely Completed by now: it's an older thread id (~2016).
+- Evidence: [thread](https://www.skyscrapercity.com/threads/rishon-lezion-unik-top-4-x-20-26-fl-u-c.2075941/) — "Rishon Lezion | Unik Top | 4 x 20-26 fl | u/c".
+- Confidence: medium (per-tower floors and current status unknown).
+- Found: 2026-09-27
+
+## Rehovot Elite (Rehovot) — new project
+- Row(s): none — new
+- Proposed change: add 7 rows: 5x25fl + 2x15fl, U/C per the title. It's an old thread id, so the status is likely stale.
+- Evidence: [thread](https://www.skyscrapercity.com/showthread.php?t=1968573) — "Rehovot | Rehovot Elite | 5 x 25 fl, 2 x 15 fl | u/c".
+- Confidence: medium (status likely stale).
+- Found: 2026-09-27
+
+## Park Naimi (fmr. Park Central) (Or Yehuda) — new project
+- Row(s): none — new
+- Proposed change: add 13 rows at 13fl each: 4 Topped Out, 1 U/C, and 8 with status unspecified in the title. This is mid-rise scale. Include it only if 13fl buildings are in scope; similar-height rows already exist, e.g. Ne'eman Towers.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/or-yehuda-park-naimi-fmr-park-central-13x13-fl-4-t-o-1-u-c.2306124/) — "Or Yehuda | Park Naimi (fmr. Park Central) | 13x13 FL | 4 T/O, 1 U/C".
+- Confidence: medium (title clear, but only 5 of 13 statuses given).
+- Found: 2026-09-27
+
+## HaOrgim Tower (Bat Yam) — new project
+- Row(s): none — new
+- Proposed change: add 1 row, 140m/42fl, Approved. It's an old thread id (~2013), so it may be stale, renamed, or dropped.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/bat-yam-haorgim-tower-140m-42-fl-appd.1647635/) — "Bat Yam | HaOrgim Tower | 140m | 42 fl | Appd".
+- Confidence: medium (could be an older name for an existing Bat Yam row; check before adding).
+- Found: 2026-09-27
+
+## Smaller new-project leads (2026-09-27) — new project
+- Row(s): none — new. None of these were found in RAW_DATA:
+  - **Shai Agnon** (Bat Yam): "? fl | Planned". No floor count ([thread](https://www.skyscrapercity.com/threads/bat-yam-shai-agnon-fl-planned.2375256/))
+  - **Greenside** (Bat Yam): "14 x 9.5 fl | Prep". Low-rise ([thread](https://www.skyscrapercity.com/threads/bat-yam-greenside-14-x-9-5-fl-prep.2371195/))
+  - **HopeTown** (Petah Tikva): "12+2 FL | T/O" ([thread](https://www.skyscrapercity.com/threads/petah-tikva-hopetown-12-2-fl-t-o.2368773/))
+  - **13 Efal** (Petah Tikva): "8 FL | T/O" ([thread](https://www.skyscrapercity.com/threads/petah-tikva-efal-13-8-fl-u-c.2336843/))
+  - **20 Ben Gurion** (Ramat Gan): "10 FL | Prep" ([thread](https://www.skyscrapercity.com/threads/ramat-gan-20-ben-gurion-10-fl-prep.2320834/))
+  - **Nano Park** (Rehovot): "10 FL | Completed" ([thread](https://www.skyscrapercity.com/threads/rehovot-nano-park-10-fl-completed.1638892/))
+  - **Discount Bank HQ campus** (Rishon LeZion): "11 fl | Completed" ([thread](https://www.skyscrapercity.com/threads/rishon-lezion-discount-bank-hq-campus-11-fl-completed.2111717/))
+  - **Rishon City Hall** (Rishon LeZion): "Prop", no floor count ([thread](https://www.skyscrapercity.com/threads/rishon-lezion-rishon-city-hall-prop.2381191/))
+  - **Tfutsot Yisrael 9** (Givatayim): "?FL | U/C" ([thread](https://www.skyscrapercity.com/threads/givatayim-tfutsot-yisrael-9-fl-u-c.2372528/))
+  - Skipped as masterplans (consistent with past practice): Holon Jessie Cohen Masterplan.
+- Proposed change: add the ones with floor counts if low/mid-rise is in scope; the others need a thread-body check for floors.
+- Evidence: thread titles as linked.
+- Confidence: high on the titles; low on scope fit for the smaller ones.
+- Found: 2026-09-27
+
+## Solo (HaHistadrut 80) (Holon) — status correction
+- Row(s): 75 (currently: floors:28, status:"Planned", has url)
+- Proposed change: status Planned → Approved.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/holon-hahistadrut-80-v-b-28-fl-approved.2332975/) — current title "Holon | HaHistadrut 80 v&b | 28 fl | Approved".
+- Confidence: high.
+- Found: 2026-09-27
+
+## Diamond Tower (15 Efal) (Petah Tikva) — status discrepancy
+- Row(s): 263 (currently: floors:30, status:"Approved", has url)
+- Proposed change: current title reads "30 FL | Prop". Consider Approved → Proposed. This is the same pattern as last week's Cinema Heichal entry, where our row is ahead of the title.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/petah-tikva-diamond-tower-30-fl-prop.2418841/) — "Petah Tikva | Diamond Tower | 30 FL | Prop".
+- Confidence: low (our "Approved" could reflect newer info than the title; needs a thread-body check).
+- Found: 2026-09-27
+
+## America House (Tel Aviv) — status discrepancy
+- Row(s): 543 (currently: floors:30, status:"Approved", has url)
+- Proposed change: current title reads "30 fl | Prop". Consider Approved → Proposed, unless a later approval is posted in the thread.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/tel-aviv-america-house-30-fl-prop.2400931/) — "Tel Aviv | America House | 30 fl | Prop".
+- Confidence: low (same ambiguity as Diamond Tower).
+- Found: 2026-09-27
+
+## 30 Hapodim (Ramat Gan) — status discrepancy
+- Row(s): 98 (currently: floors:20, status:"Completed", has url)
+- Proposed change: the thread title reads "20 FL | Prep" (pre-construction), but our row says Completed. That's a large gap. Our row is probably wrong. Suggest Completed → Planned (Prep).
+- Evidence: [thread](https://www.skyscrapercity.com/threads/ramat-gan-hapodim-30-20-fl-prep.2364566/) — "Ramat Gan | Hapodim 30 | 20 FL | Prep".
+- Confidence: medium (title is clear; unclear where "Completed" came from).
+- Found: 2026-09-27
+
+## Israel–Canada Tower (Eurocom Tower) (Ramat Gan) — floors discrepancy
+- Row(s): 168 (currently: height:250.0, floors:65, status:"Approved", has url)
+- Proposed change: search results show three title versions of the same thread (id 2172458): "55 fl | Planning", "250 m | 65 fl | Approved LPC" (our stored slug), and "250 m | 60 fl | Approved LPC". It's unclear which is current. Check whether floors should be 60, not 65.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/ramat-gan-israel%E2%80%93canada-tower-fmt-eurocom-tower-250-m-60-fl-approved-lpc.2172458/).
+- Confidence: low (needs the live title via Claude in Chrome).
+- Found: 2026-09-27
+
+## Aura Pivko (Bat Yam) — missing floors (incidental)
+- Row(s): 4 (currently: floors:null, status:"Under Construction", has url)
+- Proposed change: set floors to 32. The title says "32+ fl", so the "+" may mean a few extra floors. Status U/C still matches.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/bat-yam-aura-pivko-32-fl-u-c.2315340/) — "Bat Yam | Aura Pivko | 32+ fl | U/C".
+- Confidence: medium.
+- Found: 2026-09-27
