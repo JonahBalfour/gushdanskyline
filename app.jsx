@@ -745,7 +745,7 @@ const RAW_DATA = [
 {id:637,name:"Dafna 504 (Azorim)",city:"Tel Aviv",height:null,floors:26,status:"Approved",lat:32.06892,lng:34.79376},
 {id:638,name:"104-106 Bar Lev",city:"Tel Aviv",height:90.0,floors:9,status:"Approved",lat:32.0603,lng:34.77419},
 {id:639,name:"71-75 HaShalom",city:"Tel Aviv",height:null,floors:8,status:"Approved",lat:32.10168,lng:34.80463},
-{id:640,name:"Lapid Towers",city:"Tel Aviv",height:null,floors:60,status:"Proposed",lat:32.09306,lng:34.78506},
+{id:640,name:"Lapid Towers",city:"Tel Aviv",height:null,floors:60,status:"Proposed",url:"https://www.skyscrapercity.com/threads/tel-aviv-lapid-towers-3-x-50-60-fl-proposed.2109013/",lat:32.09306,lng:34.78506},
 {id:641,name:"Acro Golf",city:"Tel Aviv",height:null,floors:18,status:"Topped Out",url:"https://www.skyscrapercity.com/threads/tel-aviv-acro-golf-2-x-18-fl-3-x-8-fl-t-o.2069603/",lat:32.08444,lng:34.7655},
 {id:642,name:"Ribal Yad Harutzim",city:"Tel Aviv",height:180.0,floors:40,status:"Approved",lat:32.07582,lng:34.79593},
 {id:643,name:"105-117 HaShalom",city:"Tel Aviv",height:null,floors:9,status:"Approved",lat:32.0672,lng:34.77637},
