@@ -356,7 +356,7 @@ const RAW_DATA = [
 {id:317,name:"Ha\'Atsmaut Tower",city:"Bat Yam",height:null,floors:37,status:"Proposed",lat:32.01922,lng:34.76171},
 {id:318,name:"Katzenelson EB",city:"Bat Yam",height:null,floors:46,status:"Approved",lat:32.01491,lng:34.75193},
 {id:319,name:"HaMasger Complex",city:"Bat Yam",height:null,floors:38,status:"Planned",lat:32.0106,lng:34.74215},
-{id:320,name:"Britania Israel on the Park",city:"Bnei Brak",height:null,floors:58,status:"Marketing",lat:32.08889,lng:34.84087},
+{id:320,name:"Britania Israel on the Park",city:"Bnei Brak",height:null,floors:58,status:"Marketing",url:"https://www.skyscrapercity.com/threads/bnei-brak-britania-israel-on-the-park-58-fl-marketing.2392542/",lat:32.08889,lng:34.84087},
 {id:321,name:"Shbiro Towers (18fl Tower 1)",city:"Ramat Gan",height:null,floors:18,status:"Completed",url:"https://www.skyscrapercity.com/threads/ramat-gan-shbiro-towers-15-2-x-18-fl-o.2305887/",lat:32.07228,lng:34.82208},
 {id:322,name:"Yoseftal 111-113 (115)",city:"Bat Yam",height:null,floors:null,status:"Planned",lat:32.02267,lng:34.7378},
 {id:323,name:"Sokolov Echad Ha\'Am Sprinzak EB",city:"Holon",height:null,floors:10,status:"Proposed",lat:32.01106,lng:34.79012},
