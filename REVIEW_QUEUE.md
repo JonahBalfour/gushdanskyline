@@ -630,3 +630,169 @@ acting on them, not just a title/search-snippet read.
 - Evidence: thread titles/slugs as linked.
 - Confidence: high on titles; low on current status for old thread ids.
 - Found: 2026-10-04
+
+<!-- ===== Weekly sweep 2026-10-11 ===== -->
+
+## Orek and Oz House (Ramat Gan) — unsplit-tower
+- Row(s): 181 (currently: height:null, floors:60, status:"Proposed", has url)
+- Proposed change: add a second row, 71fl, Proposed. Relabel 181 as the 60fl tower. This is one of the CLAUDE.md "bonus multi-tower leads". The search snippet says the project replaces two existing office towers on Abba Hillel Silver Rd.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/ramat-gan-orek-and-oz-house-71-60-fl-prop.2440349/): "Ramat Gan | Orek and Oz House | 71+60 FL | Prop". The title came back in this run's search results, so it's not just our stored slug.
+- Confidence: high.
+- Found: 2026-10-11
+
+## The Park (fmr Lehi Complex) (Bnei Brak) — unsplit-tower + status
+- Row(s): 26 (currently: height:null, floors:42, status:"Completed", has url)
+- Proposed change: add the second tower, 37fl. Our stored slug says "42 fl + 37 fl | 1 Completed, 1 Approved". A newer revision of the same thread id reads "...amot-bnei-brak-hyp-42-fl-37-fl-1-t-o-1-approved". Wikipedia separately lists "The Park Tower / Amot HaLehi Tower" as 47fl, completed 2025. Floors and statuses need a Claude-in-Chrome read before applying (42 vs 47fl; Completed vs T/O). The 37fl tower is Approved in both title revisions.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/bnei-brak-the-park-fmr-lehi-complex-amot-bnei-brak-hyp-42-fl-37-fl-1-t-o-1-approved.2164682/) (id 2164682, same as our stored url); [Wikipedia: The Park Tower](https://en.wikipedia.org/wiki/The_Park_Tower).
+- Confidence: high that a 37fl Approved tower is missing; low on the main tower's floors and status.
+- Found: 2026-10-11
+
+## Dofen HaKirya (Tel Aviv) — unsplit-tower
+- Row(s): 600 (currently: height:null, floors:60, status:"Proposed", has url)
+- Proposed change: split into 4 rows, 2x55fl + 2x60fl, all Proposed (this is the per-tower breakdown in HANDOFF.md's height-fill "bonus" note). Wikipedia's tallest-buildings list separately has "Dofen Hakirya" proposed at 279m/57fl, which doesn't map cleanly to either figure, so leave height null.
+- Evidence: stored url slug: "Tel Aviv | Dofen HaKirya | 4 x 55–60 fl | Proposed" ([thread](https://www.skyscrapercity.com/threads/tel-aviv-dofen-hakirya-4-x-55%E2%80%9360-fl-proposed.1897436/)). The current title didn't come back in search this run.
+- Confidence: medium (4 towers is clear; the 55/55/60/60 split comes from an earlier interactive read, not the title).
+- Found: 2026-10-11
+
+## BSR Sarona, formerly United Sarona (Tel Aviv) — unsplit-tower + missing height
+- Row(s): 467 (currently: height:null, floors:40, status:"Completed", has url)
+- Proposed change: split into 3 rows, each 146m/40fl. This also fills a 146m height (the towers would count toward the "under 150m" bracket only). Status: the slug says T/O, our row says Completed. Keep Completed unless the thread says otherwise.
+- Evidence: stored url slug: "Tel Aviv | BSR Sarona, formerly United Sarona | 3x146m | 3x40 fl | T/O" ([thread](https://www.skyscrapercity.com/threads/tel-aviv-bsr-sarona-formerly-united-sarona-3x146m-3x40-fl-t-o.1830012/)).
+- Confidence: medium-high (slug is unambiguous; not re-surfaced via search this run).
+- Found: 2026-10-11
+
+## Ahi Dakar EB (Tel Aviv) — unsplit-tower
+- Row(s): 636 (currently: height:null, floors:11, status:"Approved", has url)
+- Proposed change: our row is one of the 11fl buildings. The slug shows 7 towers at 24–29fl that are missing entirely. Like Ha'Argazim/Golomb, this is range-only ("7x24-29"), so per-tower floors need the thread body. At minimum, add 7 tower rows (floors 24–29, exact split unknown) + 5 more 11fl rows, all Approved.
+- Evidence: stored url slug: "Tel Aviv | Achi Dakar EB | 7x24-29, 6x11 fl | Approved" ([thread](https://www.skyscrapercity.com/threads/tel-aviv-achi-dakar-eb-7x24-29-6x11-fl-approved.2336849/)).
+- Confidence: high that 7 high-rises are missing; low on the per-tower floors.
+- Found: 2026-10-11
+
+## Kehilat Canada South EB (Tel Aviv) — unsplit-tower
+- Row(s): 514 (currently: height:null, floors:29, status:"Approved", has url)
+- Proposed change: split into 12 rows: 2x29fl, 1x19fl, 3x15fl, 6x9fl, all Approved. At minimum, add the second 29fl tower and the 19fl building if low-rises are out of scope.
+- Evidence: stored url slug: "Tel Aviv | Kehilat Canada South EB | 2 x 29 fl, 1 x 19 fl, 3 x 15 fl, 6 x 9 fl | Approved" ([thread](https://www.skyscrapercity.com/threads/tel-aviv-kehilat-canada-south-eb-2-x-29-fl-1-x-19-fl-3-x-15-fl-6-x-9-fl-approved.1724308/)). Old thread id (~2014), so check whether it has since moved to U/C.
+- Confidence: medium (slug-only, older thread).
+- Found: 2026-10-11
+
+## Simcha Holtsberg EB (Jaffa) (Tel Aviv) — unsplit-tower
+- Row(s): 606 (currently: height:null, floors:25, status:"Approved", has url)
+- Proposed change: our row is the 25fl tower. The slug also lists 7x15fl + 5x9fl. Add the 7 15fl buildings (and the 5 9fl ones if low-rises are in scope), all Approved.
+- Evidence: stored url slug: "Tel Aviv | Simcha Holtsberg EB (Jaffa) | 5x9, 7x15, 25 fl | Approved LPC" ([thread](https://www.skyscrapercity.com/threads/tel-aviv-simcha-holtsberg-eb-jaffa-5x9-7x15-25-fl-approved-lpc.2389872/)).
+- Confidence: medium (slug-only).
+- Found: 2026-10-11
+
+## HaShomron Complex (Old Central Bus Station) (Tel Aviv) — unsplit-tower (range-only masterplan)
+- Row(s): 715 (currently: height:null, floors:30, status:"Approved", has url)
+- Proposed change: this is a 16-building approved plan (10–30fl range) collapsed into one row. Same schema question as Hagag Einstein / Ha'Argazim / Shlomo Sixt. Either keep one row for the tallest building, or drop it as a masterplan. Note: "Bat Sheva Tower" (547, 36fl Planned) appears to sit on this same site. Its search snippet says Levinstein + Shikun & Binui, at the old Central Bus Station. Check that it isn't double-counted against this row.
+- Evidence: stored url slug: "Tel Aviv | HaShomron Complex (Old Central Bus Station) | 16 x 10–30 fl | Approved" ([thread](https://www.skyscrapercity.com/threads/tel-aviv-hashomron-complex-old-central-bus-station-16-x-10%E2%80%9330-fl-approved.2348396/)); [Bat Sheva Tower thread](https://www.skyscrapercity.com/threads/tel-aviv-bat-sheva-tower-36-fl-prep.2382520/).
+- Confidence: medium (decision needed on schema, not on facts).
+- Found: 2026-10-11
+
+## More slug-encoded multi-building rows (2026-10-11 batch) — unsplit-tower
+- Row(s): each has a single row (or too few rows), but its own stored `url` slug encodes more buildings. None of these are in the 09-25 / 09-27 / 10-04 lists. All are slug-only, so re-check the current title first:
+  - **Mandarin Oriental Hotel & Residences** (Tel Aviv, 470, 97m/25fl T/O): "2 x 25 fl | 2 x 97 m | T/O". Add the twin.
+  - **The Upper House** (Tel Aviv, 604, 123m/33fl Completed): "2 x 123 m | 2 x 33 fl | T/O". Add the twin.
+  - **Gindi Givatayim Park** (Givatayim, 352, 125m/25fl Approved): "125m | 3 x 25 fl | Appd". Add 2 more.
+  - **Naveh Kfar Ganim** (Petah Tikva, 393, 80m/25fl Completed): "80 m | 4 x 25 fl | Completed". Add 3 more.
+  - **Park Bavli** (Tel Aviv, 551/796, 2 rows at 150m/44fl Completed): slug "4 x 150 m | 4 x 44 fl | 2 completed". We have 2 of 4. The other two's status is unknown.
+  - **GO Yafo Tel-Aviv** (Tel Aviv, 519, 15fl U/C): "2x17, 3x15 fl | U/C"
+  - **Acro Golf** (Tel Aviv, 641, 18fl T/O): "2 x 18 fl, 3 x 8 fl | T/O"
+  - **We TLV** (Tel Aviv, 703, 110m/30fl Completed): "110 m | 30 fl, 12 fl | Completed". Add the 12fl building.
+  - **Even Gvirol 192** (Tel Aviv, 598, 30fl Approved): "30 fl + 6 fl VB"
+  - **MOMA Tel Aviv** (Tel Aviv, 568, 18fl Completed): "2x6, 2x18 fl | Completed"
+  - **Blue Tel Aviv** (Tel Aviv, 756, 45m/13fl Completed): "45 m | 6 x 13 fl"
+  - **Sitonai Market - Gindi Tel Aviv** (Tel Aviv, 727, 16fl Completed): "11 x 16 fl"
+  - **Acro on the Boulevard (Kehilat Canada North)** (Tel Aviv, 513, 19fl Approved): "7x9 + 19 fl"
+  - **Dan Ramat HaChayal** (Tel Aviv, 653, 19fl Approved): "11x7 + 19 fl"
+  - **HaPelekh EB** (Tel Aviv, 605, 10fl Approved): "16 x 8–19 fl" (range only)
+  - **Khalmit Mega Project** (Bat Yam, 315, 40fl Approved): "7 x 25–40 fl, 13 x 10 fl" (range only)
+  - **Tel Giborim EB** (Bnei Brak, 326, 8fl Proposed): "38 x 8 fl" (low-rise)
+  - **Florentin Village** (Tel Aviv, 729, 10fl Completed): "14, 2 x 10 fl | 54/40m"
+  - **Broshim Dorms TAU** (Tel Aviv, 746, 70m/9fl Completed): "3x7, 2x9, 3x18 fl | 70m". The 70m probably belongs to an 18fl building, not the 9fl one (mixed pairing).
+  - **Yaakobi Y Garden / Y Premium** (Petah Tikva, 288, 19fl U/C): "16-19 fl", possibly 2 buildings.
+  - **6 Wissotzky** (Tel Aviv, 580, 18fl Completed): slug says "2x15 fl | U/C". Both floors (18 vs 15) and count (1 vs 2) disagree with our row.
+- Proposed change: split/fix each per its current title. The highest-value ones are the twins/triplets with heights (Mandarin Oriental, Upper House, Gindi Givatayim Park, Naveh Kfar Ganim, Park Bavli).
+- Evidence: the rows' own stored url slugs in app.jsx.
+- Confidence: medium (slugs can be stale; the 2x/3x/4x twin patterns are the most reliable).
+- Found: 2026-10-11
+
+## Yitzhak Sadeh E–B (Petah Tikva) — unsplit-tower (non-SkyscraperCity lead)
+- Row(s): 109 (currently: height:null, floors:33, status:"Approved", no url)
+- Proposed change: possibly split into 5 towers. The developer (Amim/Neve Amim) describes "Yitzhak Sadeh 1–19" as replacing 9 buildings with five residential towers (~620 apartments), with the zoning plan fully authorized. No SkyscraperCity thread surfaced via search, so the per-tower floors are unknown.
+- Evidence: [Amim — Yitzhak Sadeh 1–19 event](https://amim.co.il/en/watch-over-160-residents-attend-neve-amims-yitzhak-sadeh-1-19-urban-renewal-event-in-petach-tikvah) (developer page, not a forum thread).
+- Confidence: low (needs a Claude-in-Chrome check to find the thread and confirm it's the same project as row 109).
+- Found: 2026-10-11
+
+## Audit flags checked this run, no change needed or no thread found — for the record
+- **Soho Complex** (Rishon LeZion, 334): false positive. Its stored url is "Soho Complex | 18 fl | Approved", a single building.
+- **MAX Tower** (455, 80m/25fl T/O) vs **M Tower** (457, 70m/21fl Completed), Petah Tikva: no thread found. The different heights, floors and status make a duplicate unlikely.
+- **Savyonei Ramat Aviv** (758) vs **Savyonei Ramat Aviv 10** (757), Tel Aviv: not a duplicate as such. Developer sources describe the gated community as "ten terraced and high-rise buildings", so "10" may be a building number. The whole complex may be under-represented, but there's no thread to split from.
+- **Bayit BaPark Complex** (Or Yehuda, 111, 8fl T/O): no thread found. Ashtrom's project page describes 27 buildings of 10–13 floors, built in 34 months. That doesn't match our 8fl row at all. Worth a Claude-in-Chrome look ([Ashtrom](https://building.ashtromconstruction.co.il/en/projects/a-house-in-the-park-or-yehuda)).
+- No thread surfaced (no entry): Bar Kochva Complex (160), Dalia Complex (215), Seirovan Compound (628), Jabotinsky Enav (37), Jabotinsky-Herzl (96). The last two are still open CLAUDE.md bonus leads.
+- Found: 2026-10-11
+
+## 30 Herzl (Rishon LeZion) — new project
+- Row(s): none — new (not found in RAW_DATA; the only Rishon "Herzl" row is "Herzl–Bialik E–B", 115, 50fl)
+- Proposed change: add 1 row, 39fl, Approved. Per the thread, the developer says it's in the permitting process.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/rishon-lezion-30-herzl-39fl-approved.2378241/): "Rishon LeZion | 30 Herzl | 39fl | Approved".
+- Confidence: high.
+- Found: 2026-10-11
+
+## Mazeh East Tower (Tel Aviv) — new project?
+- Row(s): none — new? (we have "Mazeh Tower", 497, 41fl Under Construction, no url. Check whether "Mazeh East" is a separate building or the same one.)
+- Proposed change: if separate, add 1 row, 42fl/180m, Approved.
+- Evidence: listed on the Tel Aviv forum index as "Mazeh East Tower | 42 FL | 180m | Approved" (search summary of [the Tel Aviv forum index](https://www.skyscrapercity.com/forums/tel-aviv.3541/); no direct thread URL surfaced).
+- Confidence: low (needs a Claude-in-Chrome check of the forum index).
+- Found: 2026-10-11
+
+## Segula Redevelopment / Yarkonim Redevelopment (Petah Tikva) — new project (masterplan)
+- Row(s): none — new
+- Proposed change: likely skip as a masterplan, consistent with past practice. Segula is about 30 high-rises of ~25fl plus 15fl mid-rises around Highway 40 (Bar Levi Architects), Approved. Yarkonim is mainly office towers, Prop. Recorded so it isn't re-discovered. Also seen: "U Park Segula | 5 fl | T/O", which is low-rise and out of scope.
+- Evidence: [Segula Redevelopment thread](https://www.skyscrapercity.com/threads/petah-tikva-segula-redevelopment-30-high-rises-approved.2404608/): "Segula Redevelopment | 30 high-rises | Approved".
+- Confidence: high on the thread; schema decision needed.
+- Found: 2026-10-11
+
+## Non-SkyscraperCity new-project leads (2026-10-11) — new project
+- Row(s): none — new? None of these have a SkyscraperCity thread located yet:
+  - **Almog Ramat HaNasi** (Bat Yam): building permit approved for 964 apartments in four high-rises of 25–37 stories along 29 November St ([JPost](https://www.jpost.com/business-and-innovation/real-estate/article-850297)). Check whether this matches an existing Bat Yam row (e.g. "Kaf Tet Benovember", 131, 37fl Approved; the street name is "29 November"). That looks like a likely match, which would make this an unsplit-tower case rather than a new project.
+  - **Sufrin Rambam renewal** (Rishon LeZion): three ~30-story residential towers + mid-rises, ~550 apartments ([JPost](https://www.jpost.com/business-and-innovation/real-estate/article-859481)).
+- Proposed change: locate the threads via Claude in Chrome before adding anything.
+- Evidence: news articles as linked.
+- Confidence: low.
+- Found: 2026-10-11
+
+## Solo (HaHistadrut 80) (Holon) — status note (conflicts with pending 2026-09-27 entry)
+- Row(s): 75 (currently: floors:28, status:"Planned", has url)
+- Proposed change: the pending 2026-09-27 entry proposes Planned → Approved, based on the "…28 fl | Approved" title. This run's search shows a newer title "Holon | Solo (HaHistadrut 80) | 28 fl | Prep", with posts from Jan and Apr 2026 saying demolition is complete. "Prep" maps to our "Planned", so keep Planned and drop the 09-27 entry. If excavation has started, Under Construction may be close.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/holon-hahistadrut-80-v-b-28-fl-approved.2332975/) (same id 2332975; the search summary quotes the current "Prep" title and the Jan 17 / Apr 13, 2026 posts).
+- Confidence: medium.
+- Found: 2026-10-11
+
+## Diamond Tower (15 Efal) (Petah Tikva) — status note (conflicts with pending 2026-09-27 entry)
+- Row(s): 263 (currently: floors:30, status:"Approved", has url)
+- Proposed change: no change. The pending 2026-09-27 entry suggested Approved → Proposed because a cached title read "Prop". This run's search summary says the thread was changed to Approved in August 2024, so our row is correct. Drop the 09-27 entry.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/petah-tikva-diamond-tower-30-fl-prop.2418841/) (summary: "30 FL, Approved… changed to approved in August 2024").
+- Confidence: medium.
+- Found: 2026-10-11
+
+## Emek Brakha Tower (Tel Aviv) — status drift?
+- Row(s): 518 (currently: height:175.0, floors:45, status:"Planned", has url)
+- Proposed change: possibly Planned → Approved. A post in the thread reportedly says the project received final DPC approvals. A separate, older thread (id 1772803) is titled "Emek Brakha Tower | 48 fl | Approved". The floor count (45 vs 48) also differs between threads.
+- Evidence: [current thread](https://www.skyscrapercity.com/threads/tel-aviv-emek-brakha-tower-45-fl-175-m-prep.2400895/); [older thread](https://www.skyscrapercity.com/threads/tel-aviv-emek-brakha-tower-48-fl-approved.1772803/).
+- Confidence: low (needs a Claude-in-Chrome check of the newest posts).
+- Found: 2026-10-11
+
+## Possible status drift — low-confidence batch (2026-10-11)
+- Row(s) / signal: each row below turned up a conflicting title revision or post in search. In every case it's unclear which revision is newer, so check each thread's live title:
+  - **Blue & The City** (Bat Yam, 24, U/C): a post said completion was expected by July 2026. It may now be Topped Out or Completed. Another revision of the same id reads "32 fl | Prep".
+  - **C One** (Bat Yam, 105, U/C): the same thread id also appears as "35 fl | Approved", with posts saying a building permit had been applied for. Our U/C may be ahead of reality.
+  - **Bat Yam Beach Hotel** (Bat Yam, 46, U/C): a later reply says the tower itself was still on hold.
+  - **BIG Kaniel Towers** (Petah Tikva, 19/865–868, all U/C): a revision of the same id reads "5x40 FL | Prep".
+  - **Pro Medical Tower / ILDC 2** (Bnei Brak, 31, U/C): a revision reads "23 FL | 110 m | Prep". Posts after a 2022 permit reportedly said there was no progress.
+  - **Lexus Tower** (Tel Aviv, 476, U/C): a revision of the same id (2053333) reads "170m | 48fl | Prep".
+  - **Efal 33** (Petah Tikva, 233, 39fl U/C): the forum notes the thread's OP was mixed up with the separate Efal Tower (26fl). Adgar's own listing for "Efal 33 st" describes a 2-storey, ~2,800 m² project. Our 39fl/U/C row may be wrong.
+  - **Pninat Ayalon** (Tel Aviv, 557, 310m/81fl Prop): status unchanged (Prop), but a revision of the same id reads "70fl". Floors may have changed.
+- Checked and still matching (no entry): Bat Sheva Tower (Prep/Planned), Park Tower Aba Hillel-HaMavdil (Prep/Planned), Efal Tower (Planning/Planned), 2 Hayetsira (Approved; Ashtrom targets a 2026 start), Symphony Tower, WAVE Givat Shmuel, Metropark, Rozio HaPodim. No thread surfaced for Life Tower, Gan HaIr Tower, Aura Empire, Shoham Tower, Harel Tower, Avenue One, Carlton Hotel, Montefiore Tower, 100 Hashmonaim, HaNahala Tower, Daniel Tower TLV, Century Tower, Menorah Allenby, Beit Amot Mishpat, Eldar Tower, Clal Korazin, Geulim or Y Town.
+- Confidence: low across the board.
+- Found: 2026-10-11
