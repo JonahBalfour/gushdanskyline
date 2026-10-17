@@ -796,3 +796,96 @@ acting on them, not just a title/search-snippet read.
 - Checked and still matching (no entry): Bat Sheva Tower (Prep/Planned), Park Tower Aba Hillel-HaMavdil (Prep/Planned), Efal Tower (Planning/Planned), 2 Hayetsira (Approved; Ashtrom targets a 2026 start), Symphony Tower, WAVE Givat Shmuel, Metropark, Rozio HaPodim. No thread surfaced for Life Tower, Gan HaIr Tower, Aura Empire, Shoham Tower, Harel Tower, Avenue One, Carlton Hotel, Montefiore Tower, 100 Hashmonaim, HaNahala Tower, Daniel Tower TLV, Century Tower, Menorah Allenby, Beit Amot Mishpat, Eldar Tower, Clal Korazin, Geulim or Y Town.
 - Confidence: low across the board.
 - Found: 2026-10-11
+
+<!-- ===== Weekly sweep 2026-10-18 ===== -->
+
+## Seven Seas Sde Dov (Tel Aviv) — duplicate
+- Row(s): 535 "Seven Seas Sde Dov" (51fl, Proposed, has url) and 939/940/941 "Seven Seas Sde Dov (Tower 1/2/3)" (51fl / 21fl / 9fl, Proposed, same url)
+- Proposed change: delete row 535. It's an older unsplit copy of the same project: same thread, and its 51fl duplicates Tower 1 (939). `audit.py` didn't catch it because the names differ only by the "(Tower N)" suffix. Both 535 and 939 show up in its missing-height list, so the 51fl tower is counted twice in the stats. Row 535's coordinates (32.09823, 34.78941) also differ from 939–941's (32.0834, 34.78072). Keep whichever coordinates are correct.
+- Evidence: both rows store the same url, [thread](https://www.skyscrapercity.com/threads/tel-aviv-seven-seas-sde-dov-51-fl-21-fl-9-fl-m-prop.2452241/): "Seven Seas Sde Dov | 51 fl + 21 fl + 9 fl | Prop" (from the slug).
+- Confidence: high.
+- Found: 2026-10-18
+
+## BioTech Valley Center (Ramat Gan) — unsplit-tower
+- Row(s): 291 (currently: height:null, floors:20, status:"Approved", has url)
+- Proposed change: split into 2 rows, 20fl + 19fl, both Approved.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/ramat-gan-biotech-valley-center-19-20-fl-approved.2377770/): "Ramat Gan | BioTech Valley Center | 19-20 FL | Approved". The search summary of the thread quotes a Calcalist report of Magdal's "two biotech towers" next to Sheba hospital "at 20 and 19 floors".
+- Confidence: high (title range plus thread text both say two towers).
+- Found: 2026-10-18
+
+## Hagag Ludwipol (Tel Aviv) — unsplit-tower
+- Row(s): 616 (currently: height:null, floors:24, status:"Planned", has url)
+- Proposed change: possibly split into 3 rows at 24fl each, Planned. The search summary of the thread describes "three towers of 24 floors each" (Hagag Group + Q Real Estate, DLF Architecture, offices/retail). A commenter in the same thread argues the towers look closer to ~42 floors than 24, and Hagag reportedly wanted to increase the floor area. The floor count may be out of date.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/tel-aviv-hagag-ludwipol-24-fl-planning.2329029/): "Tel Aviv | Hagag Ludwipol | 24 FL | Planning". The title doesn't say how many towers; the three-tower figure comes from the OP per the search summary.
+- Confidence: medium on 3 towers; low on 24fl being current. Needs a Claude-in-Chrome check.
+- Found: 2026-10-18
+
+## Non-SkyscraperCity leads on audit-flagged "Towers"/"Complex" rows (2026-10-18)
+- Row(s) / signal: none of these have a SkyscraperCity thread surfaced via search. The evidence below is from developer, news or municipal pages only:
+  - **Ayala Towers** (Beer Yaakov, 63, 18fl Completed, has url): Ashtrom Construction's project page describes "two 17-story office towers" with underground parking ([Ashtrom](https://www.ashtromconstruction.co.il/en/projects/ayala-towers)). This adds to the already-inconclusive CLAUDE.md note (third-party "2x18fl"). Two towers now looks likely; the exact floor count, 17 vs 18, is still open.
+  - **Zahala Towers** (Tel Aviv, 686, 11fl Completed, no url): a sponsored Haaretz piece describes two towers of 14 and 8 stories by A. Luzon and Brosh Nir ([Haaretz](https://www.haaretz.com/haaretz-labels/real-estate/2020-08-30/ty-article-labels/zahala-towers-rises-to-the-task/00000180-8db8-d30a-a5ae-afbc22830000)). Neither figure matches our single 11fl row.
+  - **Denmark Complex** (Petah Tikva, 76, 22fl Approved, no url): a municipal-program description says the northern part allows "towers of up to 41 floors" (via [saan.co.il](https://saan.co.il/?p=3559) search snippet). Our single 22fl row may understate it badly.
+  - **Orion Towers** (Or Yehuda, 439, 17fl Completed, no url): Shapir's "Orion 2" in Neve Rabin is 3 towers × 16 floors ([Shapir](https://www.shapir.co.il/?p=4257)). This could be a phase 2 next to our row, or our row could be a merged version. Unclear.
+- Proposed change: none until threads are found. Each needs a Claude-in-Chrome browse of the relevant sub-forum.
+- Confidence: low.
+- Found: 2026-10-18
+
+## Garden Towers / "Concept HaHashmonaim" (Bat Yam) — possible unsplit-tower or new project
+- Row(s): 135 "Garden Towers (Tower 1)" 30fl + 914 "(Tower 2)" 27fl, both Marketing, url thread 2421664
+- Proposed change: a separate, older thread (id 2375337) is titled "Bat Yam | Concept HaHashmonaim | 6 x 30 fl | Planned". The Garden Towers thread itself says "Towers 3 and 4 are in advanced planning", per the search summary. So Garden Towers' 2 towers may be one phase of a larger HaHashmonaim Street scheme (4–6 towers). Check whether the 2375337 thread is the same project and whether towers 3–4 (or 3–6) should be added.
+- Evidence: [Concept HaHashmonaim thread](https://skyscrapercity.com/threads/bat-yam-concept-hahashmonaim-6-x-30-fl-planned.2375337); [Garden Towers thread](https://www.skyscrapercity.com/threads/bat-yam-garden-towers-27-30-fl-presale.2421664/).
+- Confidence: low (relationship between the two threads unconfirmed).
+- Found: 2026-10-18
+
+## Masterpiece Bavli (Tel Aviv) — height/status discrepancy
+- Row(s): 499 + 930 (currently: both height:174.8, floors:48, status:"Under Construction", has url)
+- Proposed change: the thread title still reads "2x146m | 2x48 fl | Prep". Our rows have 174.8m and U/C, and neither matches. Forum posts note that 146m/48fl is only 3.0m per floor, which seems low, so 174.8m may come from a later post. Check the thread before changing anything. If nothing newer exists, revert to 146m / Planned.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/tel-aviv-masterpiece-bavli-2x146m-2x48-fl-prep.2401060/), with the same title on page 2.
+- Confidence: low.
+- Found: 2026-10-18
+
+## Azrieli Town (Residential Tower) (Tel Aviv) — status correction
+- Row(s): 692 (currently: height:156.0, floors:40, status:"Topped Out", has url). Its sibling 785 (Office Tower) is already Completed.
+- Proposed change: status Topped Out → Completed. The stored thread title covers both towers and says "completed". Side note: CTBUH lists heights and floors quite differently (Azrieli Town Tower 156.4m/38fl; residential tower ~164m estimated from 48fl). Our 156m/40fl vs 175m/50fl pairing may be swapped between the two towers. Check the thread OP before touching heights.
+- Evidence: stored url slug "Tel Aviv | Azrieli Town | 50 + 40 fl | 175 + 156m | completed" ([thread](https://www.skyscrapercity.com/threads/tel-aviv-azrieli-town-50-40-fl-175-156m-573-515f-completed.1929095/)); [CTBUH](https://www.skyscrapercenter.com/building/azrieli-town-residential-tower/25680).
+- Confidence: medium on status; low on the heights question.
+- Found: 2026-10-18
+
+## Blue Tower / WIX Campus (Tel Aviv) — note on the pending 2026-09-25 entry
+- Row(s): 577 (see the pending 2026-09-25 "Blue Tower / WIX Campus" entry)
+- Proposed change: no new change. This adds a data point to that entry. This run's search summary of the Blue Tower thread (id 2291094) says the district committee decided to deposit the plan but cut the tower from 80 floors to 55 and halved the housing units. That would make the "205m / 55 fl" title revision the newer one, not "310m / 80 fl" as the 09-25 entry assumed. The WIX campus thread slug (id 1804655) now also reads "3 x 13 fl T/O, 80 fl 310 m Prop".
+- Evidence: [Blue Tower thread](https://www.skyscrapercity.com/threads/tel-aviv-blue-tower-205m-673ft-55-fl-pro.2291094/); [WIX campus thread](https://www.skyscrapercity.com/threads/tel-aviv-wix-campus-blue-tower-3-x-13-fl-t-o-80-fl-310-m-1017-ft-prop.1804655/page-2).
+- Confidence: low (the two threads disagree; needs a Claude-in-Chrome check).
+- Found: 2026-10-18
+
+## Lincoln Mekorot (Tel Aviv) — status discrepancy
+- Row(s): 589 (currently: floors:30, status:"Approved", has url)
+- Proposed change: our stored slug says "Mekorot Tower | 30 fl | Prop". This run's search shows the thread now titled "Mekorot Masterplan | Canada Israel Group; Mekorot | Mann Shinar Architects | 30 FL | ?", with the status shown as "?". Neither version says Approved. Possibly Approved → Proposed, unless the thread body shows an approval.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/tel-aviv-mekorot-tower-30-fl-prop.2390404/) (current title per search summary).
+- Confidence: low.
+- Found: 2026-10-18
+
+## Smaller new-project leads (2026-10-18) — new project
+- Row(s): none — new. Neither was found in RAW_DATA (row 306 "7–9 Atzmaut Street" is a different address):
+  - **HaAtzmaut 31** (Bat Yam): "10.5 fl | Planned", Moshe Mano Architects. A post says the current application is for 9.5 floors above ground. Low-rise ([thread](https://www.skyscrapercity.com/threads/bat-yam-haatzmaut-31-10-5-fl-planned.2377187/))
+  - **Hazait Street** (Bat Yam): "? fl | Planned". No floor count ([thread](https://www.skyscrapercity.com/threads/bat-yam-hazait-street-fl-planned.2375249/))
+- Proposed change: add only if low-rise is in scope; Hazait needs a thread-body check for floors.
+- Evidence: thread titles as linked.
+- Confidence: high on titles; low on scope fit.
+- Found: 2026-10-18
+
+## Audit flags checked this run, no change needed or no thread found — for the record
+- **TOU Towers** (523/825) vs **TLYOU Tower** (632), Tel Aviv: false positive. TOU = Rubinstein Twins, 2x33fl Completed (thread 1829666). TLYOU = 13-15 La Guardia, 27+8fl Prep (thread 2419825).
+- **Icon Tower** (70) vs **One Tower** (238), Ramat Gan: false positive. Separate threads (1830741 vs 2053176) with different heights and floor counts.
+- **NEARO Towers** (59/870) vs **Baron Towers** (77/871), Petah Tikva: false positive. Both are already split into 2 rows, and they're different projects.
+- **Sea Tower 4** (157, 25fl Marketing) vs **Sea Towers** (811/812, 2x28fl Approved), Bat Yam: not a duplicate. Separate threads (2005878 vs 1789012) at different coordinates. Developer pages describe a "Sea Tower" project of two 22–25fl towers in Park HaYam, which may relate to Sea Tower 4, but there's no thread to confirm.
+- **Balfour 165 Tower** (278, 120m/35fl U/C, no url) vs **Balfour Towers** (813/814), Bat Yam: not a duplicate. Different coordinates. No thread found for Balfour 165.
+- **Azrieli Town E** (634, 258m/65fl Approved) vs **Azrieli Town** (692/785): separate threads (1595578 vs 1929095). Treated as different projects.
+- **Bezalel towers** (84): stored slug reads "90 fl | Prop" with a single floor count, so there's nothing to split from the title.
+- No SkyscraperCity thread surfaced (no entry): Start Towers (184), Market Towers (379), Migdal-Top Towers (760), Shoham Prashkovsky Towers (450).
+- Found: 2026-10-18
+
+## Status-drift sample checked, no drift found (2026-10-18) — for the record
+- Still matching their current titles: Geulim (161, Proposed), 4 HaMa'avak (342, Prop), DREAMS Park HaYam (307, Approved), BSR 1K Residential Towers (324/875, Prop), Orlov Complex (159/945/946, Prop), HaNevi'im 53 (230, Planned), Zarfati Selected (186/898/899, U/C), HaYetsira Tower (268, Planned), Castro Towers (330/869, Approved; the thread reports DPC approval), Hagag Ludwipol (616, Planning). Schiller Compound (203/958): a "2x27 fl | Prop" revision of the same thread id surfaced, but the summary says the project has a permit. Our Approved is kept.
+- No thread surfaced this run: Minute Bat Yam (132), Solomon Towers (194/918), Sokolov Compound EB (347/953), True TLV / Dafna 505 (491).
+- Found: 2026-10-18
