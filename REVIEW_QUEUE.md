@@ -889,3 +889,120 @@ acting on them, not just a title/search-snippet read.
 - Still matching their current titles: Geulim (161, Proposed), 4 HaMa'avak (342, Prop), DREAMS Park HaYam (307, Approved), BSR 1K Residential Towers (324/875, Prop), Orlov Complex (159/945/946, Prop), HaNevi'im 53 (230, Planned), Zarfati Selected (186/898/899, U/C), HaYetsira Tower (268, Planned), Castro Towers (330/869, Approved; the thread reports DPC approval), Hagag Ludwipol (616, Planning). Schiller Compound (203/958): a "2x27 fl | Prop" revision of the same thread id surfaced, but the summary says the project has a permit. Our Approved is kept.
 - No thread surfaced this run: Minute Bat Yam (132), Solomon Towers (194/918), Sokolov Compound EB (347/953), True TLV / Dafna 505 (491).
 - Found: 2026-10-18
+
+<!-- ===== Weekly sweep 2026-10-25 ===== -->
+
+## Delek Motors Tower (Tel Aviv) — duplicate
+- Row(s): 826 "Delek Motors Tower" (146m/36fl, Completed, url t=1592984) and 469 "Vitania Towers (Tower 1)" (146m/36fl, Completed, url thread 1592984)
+- Proposed change: delete row 826. Both rows point to the same thread (id 1592984) and have the same height, floors and status. The Vitania thread's own title revisions read "1x36 fl 146m – Completed, 2x42 fl 161.5m – U/C", so the 146m/36fl tower is Vitania Tower 1. Search results show it was listed as "Delek Motors Tower | 146m | 36 FL" in older index posts (Vitania and Delek Automotive's DMR jointly bought the HaMasger lot). `audit.py` misses this because the names don't match. Row 826's coordinates (32.0555, 34.7838) differ from 469's. Keep whichever is correct.
+- Evidence: [Vitania Towers thread](https://www.skyscrapercity.com/threads/tel-aviv-vitania-towers-1x36-fl-146-m-%E2%80%93-completed-2x42-fl-161-5-m-u-c.1592984/); row 826's stored url is `showthread.php?t=1592984`, the same thread.
+- Confidence: high (same thread id, identical figures).
+- Found: 2026-10-25
+
+## Hasan Arfe C4 + C5 (Tel Aviv) — possible duplicate of Cosmopolitan 1 / Yuvalim HaMasger
+- Row(s): 732 "Hasan Arfe C4 + C5" (180m/47fl, Approved, no url) vs 495 "Cosmopolitan 1 (HaMasger)" (47fl, no height, Planned). See also the pending 09-25 split entry and the 10-04 rename/status entry for row 495.
+- Proposed change: the Yuvalim HaMasger thread's OP places that project "on lots 5 and 6 of Hassan Arafe", at HaMasger / Israel Tal. Its title is "43+47 FL | 2x180m | Approved LPC". Row 732's 180m/47fl/Approved matches its taller tower exactly. Row 732 is likely the same project under its plot name, so it would be counted twice. If confirmed, delete 732 and apply the pending 495 entries (2 rows at 47fl + 43fl, both 180m, Approved). One gap: the OP says lots 5–6, while our name says C4 + C5. That may be a different plot-labelling scheme, or a neighbouring lot pair.
+- Evidence: [Yuvalim HaMasger thread](https://www.skyscrapercity.com/threads/tel-aviv-yuvalim-hamasger-43-47-fl-2x180m-approved-lpc.2378983/) (search summary of the OP: "on lots 5 and 6 of Hassan Arafe").
+- Confidence: medium (figures match exactly; the lot numbering doesn't).
+- Found: 2026-10-25
+
+## "Tel-Aviv" (Tel Aviv) — likely duplicate / parse error
+- Row(s): 586 name:"Tel-Aviv" (183m/50fl, Completed, no url) vs 803 "Midtown (Residential Tower)" (183m/50fl, Completed)
+- Proposed change: a row named just "Tel-Aviv" looks like a harvesting artifact (the city name taken as the project name). Its 183m/50fl/Completed is identical to Midtown's residential tower. Probably delete 586. No search done: there's no name to search on. This was flagged from the data alone.
+- Evidence: RAW_DATA rows 586 and 803.
+- Confidence: low (strong data match, but no thread confirms it; check whether any 183m/50fl Tel Aviv tower other than Midtown exists).
+- Found: 2026-10-25
+
+## Ahimeir Tower vs Ahimeir 5-7-9 (Tel Aviv) — possible duplicate
+- Row(s): 689 "Ahimeir Tower" (20fl, Completed, url thread 1811104, slug "20 fl | approved") and 520 "Ahimeir 5-7-9" (20fl, Under Construction, no url)
+- Proposed change: both are 20fl Tel Aviv rows on Ahimeir St in Ramat Aviv. Search summaries of the Ahimeir Tower thread describe a single tower at Ahimeir/Ben Yosef. The approval allowed either two 10fl buildings or one 16fl tower, and the one-tower option was chosen. The "20 fl" comes from a forum member counting floors on a render. These are probably one project. If so, keep one row, add the url, and check the real floor count (16 vs 20) and status. Also seen, and probably separate: "HaBayit BeAhimeir | 2 x 18 fl | approvals" (thread 1731960).
+- Evidence: [Ahimeir Tower thread](https://www.skyscrapercity.com/threads/tel-aviv-ahimeir-tower-20-fl-approved.1811104/); [HaBayit BeAhimeir](https://www.skyscrapercity.com/threads/tel-aviv-habayit-beachimeir-2-x-18-fl-approvals.1731960/).
+- Confidence: low (needs a Claude-in-Chrome check of house numbers and current status).
+- Found: 2026-10-25
+
+## Jabotinsky Le'an (Ramat Gan) — possible duplicate / superseded
+- Row(s): 259 "Jabotinsky Le'an" (20fl, Proposed, no url) vs 82 "Jabotinsky-HaMatmid-Le'an EB" (pending 09-20/24 split entry: 34, 22, 2x14, 3x11 fl)
+- Proposed change: a post in the Jabotinsky-HaMatmid-Le'an EB thread (April 2026) says the earlier "22 Jabotinsky" proposal is no longer on Rabin Architects' site and asks for it to be merged into the larger EB. Row 259 may be that superseded proposal. No separate "Jabotinsky Le'an" thread surfaced. If confirmed, delete 259 when applying the row 82 split. (`audit.py` flagged 259 only against "Jabotinsky Enav", at 0.84 similarity.)
+- Evidence: [Jabotinsky-HaMatmid-Le'an EB thread](https://www.skyscrapercity.com/threads/ramat-gan-jabotinsky-hamatmid-lean-eb-34-22-2x14-3x11-fl-prop.2426685/) (search summary).
+- Confidence: low.
+- Found: 2026-10-25
+
+## Intro Tel Aviv / HaRakevet 72-74 (Tel Aviv) — unsplit-tower + floors/status
+- Row(s): 496 "Intro Tel Aviv" (currently: height:126.0, floors:26, status:"Under Construction", no url)
+- Proposed change: split into 2 rows at 30fl/126m each. Floors 26 → 30. Status: the current title says "Marketing" and an older revision says "Prep". Neither says U/C, so U/C → Marketing unless the thread shows work on site. Consider renaming to "HaRakevet 72-74 (Intro Tel Aviv)". Also add url.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/tel-aviv-harakevet-72%E2%80%9374-2-x-30-fl-126-m-marketing.2152084/): "Tel Aviv | HaRakevet 72-74 | 2 x 30 FL | 126 M | Marketing". The older slug is "intro-tel-aviv-2-x-30-fl-126-m-prep" (same id 2152084). The project is mixed use (offices, hotel, 137 apartments) by the CI group.
+- Confidence: high on the split and floors; medium on status.
+- Found: 2026-10-25
+
+## Implausible height-for-floors rows (Tel Aviv) — data-integrity batch
+- Row(s): rows whose stored height can't belong to their floor count (over 10 m per floor). They're mostly Sde Dov/Eshkol plots, where a tower's height seems to have been paired with a low-rise's floors. `audit.py`'s mixed-pairing check only compares siblings, so single rows like these slip through:
+  - **Sde Dov 3209** (507): 138.8m / 6fl
+  - **Jomo Carasso** (529): 121m / 10fl
+  - **Shalhevet EB** (631): 85m / 7fl
+  - **104-106 Bar Lev** (638): 90m / 9fl
+  - **HaArad Complex** (691): 140m / 10fl (already noted 10-04)
+  - **Marganit Tower** (831): 138m / 17fl. The real building is ~26fl, so check.
+  - Also suspicious for other reasons: **Sde Dov 2227** (528, 2fl Approved) and **Sde Dov 3202** (556, 5fl Approved) are probably low-rise parts of larger lots. **Eshkol 302** (554, 29m/6fl) appears in a search summary as "Eshkol 302 (40 + 6 fl)", which suggests a missing 40fl tower. No thread URL surfaced for it, though.
+- Proposed change: for each row, either drop the height or add the missing tower row, after checking its thread. Consider adding an `audit.py` check for height/floors > ~5 m per floor on single rows.
+- Evidence: RAW_DATA values; Eshkol 302 per a search summary of Tel Aviv forum threads.
+- Confidence: high that the pairings are wrong; low on the correct fix (needs per-thread checks).
+- Found: 2026-10-25
+
+## Vertical (Bursa Triangle) (Ramat Gan) — status/title drift
+- Row(s): 22 / 978 / 979 (111 / 72 / 60 fl, all Proposed, no heights; stored url slug "bursa-triangle-3-x-60-fl-approved")
+- Proposed change: the current title of the same thread id (2056367) is "Vertical (Bursa Triangle) | 3 x 250–450 m | 60, 72, 111 fl | Prep". Posts say only the 250m towers are approved, and the increase to 100+fl still awaits District Planning Committee approval. Suggested: status Proposed → Planned (Prep), or keep Proposed for the 111fl tower only. Heights: the title gives only the 250–450m range. A tallest-list post gives ~430m for Tower A. Fill those only with care. Also seen: a separate thread, "Vertical (Bursa Triangle) 1 | 450m | 90 fl | Prep" (id 2372986), which may be a newer version of Tower 1 (90fl, not 111fl).
+- Evidence: [main thread](https://www.skyscrapercity.com/threads/ramat-gan-vertical-bursa-triangle-3-x-250%E2%80%93450-m-60-72-111-fl-prep.2056367/page-8); [Tower 1 thread](https://www.skyscrapercity.com/threads/ramat-gan-vertical-bursa-triangle-1-450m-1476ft-90-fl-prep.2372986/).
+- Confidence: medium on status; low on Tower 1's floors (111 vs 90) and heights.
+- Found: 2026-10-25
+
+## Migdal HaKishon (Bnei Brak) — status discrepancy + url
+- Row(s): 401 (currently: height:180.0, floors:46, status:"Approved", no url)
+- Proposed change: the thread is titled "HaKishon Tower | 45 FL | Planned". An earlier revision was "Migdal HaKishon 46 FL 180 M". Posters disagree on approval: one says the TABA isn't approved, another says the whole plan was approved in 2009. Possibly Approved → Planned, and 46 → 45fl. Add url either way.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/bnei-brak-hakishon-tower-45-fl-planned.2364565/).
+- Confidence: medium on the url match; low on status.
+- Found: 2026-10-25
+
+## She (Tel Aviv) — status discrepancy
+- Row(s): 484 (currently: height:164.0, floors:40, status:"Under Construction", has url)
+- Proposed change: the thread title still reads "She | 164 m | 40 fl | Prep", same as our stored slug. Our row says Under Construction. The 2026-09-15 status correction may have relied on a post not reflected in the title. If not, U/C → Planned. Search summaries also didn't confirm the 164m figure. One poster estimated ~150m from the render.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/tel-aviv-she-164-m-40-fl-prep.2151572/).
+- Confidence: low (check HANDOFF's 09-15 She entry before acting).
+- Found: 2026-10-25
+
+## Nimrodi Ma'ariv Tower (Tel Aviv) — height/floors discrepancy
+- Row(s): 510 (currently: height:220.0, floors:52, status:"Planned", has url, slug "220-m-52-fl-prep")
+- Proposed change: newer title revisions of the same thread id (1684657) read "Nimrodi Tower (frmr Maariv Tower) | 159m | 42 fl | Prep" and "42 fl or 60 fl | Prep". Posts mention 50fl and 55fl approvals and a court-ordered reconsideration of 60fl. Our 220m/52fl no longer matches any current title. Status Planned (Prep) still matches.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/tel-aviv-nimrodi-tower-frmr-maariv-tower-159m-42-fl-prep.1684657/).
+- Confidence: low (floors have changed several times; needs the live title via Claude in Chrome).
+- Found: 2026-10-25
+
+## 2 HaMasger (Tel Aviv) — possible status advance
+- Row(s): 525 (currently: height:135.5, floors:30, status:"Planned", has url)
+- Proposed change: the title still says "Prep" (matches Planned), but a later reply reportedly says the building permit was granted, with demolition expected in early September 2025. It may be Under Construction by now.
+- Evidence: [thread](https://www.skyscrapercity.com/threads/tel-aviv-2-hamasger-30-fl-135-5-m-444-ft-prep.2400894/) (search summary).
+- Confidence: low (title unchanged; needs a check of the latest posts).
+- Found: 2026-10-25
+
+## Masterpiece Bavli = Park Bavli towers 3–4? (Tel Aviv) — possible duplicate note
+- Row(s): 499/930 "Masterpiece Bavli" (2x48fl) and 551/796 "Park Bavli" (2 of the thread's "4 x 150 m | 4 x 44 fl | 2 completed")
+- Proposed change: no change yet. A search summary of a Bavli thread says "Bavli towers 3 and 4" are designed by MYS and developed jointly by Hagag and Dimri, with a requested height increase from 44 to 48fl. That fits Masterpiece Bavli's 2x48fl. If so, Masterpiece Bavli *is* Park Bavli's missing towers 3–4. Then the pending 10-11 note ("Park Bavli: we have 2 of 4") is already covered, and no extra Park Bavli rows should be added. Check before applying either entry.
+- Evidence: search summary of Bavli threads; [Masterpiece Bavli thread](https://www.skyscrapercity.com/threads/tel-aviv-masterpiece-bavli-2x146m-2x48-fl-prep.2401060/); [Park Bavli thread](https://www.skyscrapercity.com/threads/tel-aviv-park-bavli-4-x-150-m-4-x-44-fl-2-completed.1640814/).
+- Confidence: low.
+- Found: 2026-10-25
+
+## Rishon LeZion index leads (Rishon LeZion) — new project (low)
+- Row(s): none — new. Both come from a SkyscraperCity regional index list, not from their own threads:
+  - **Metro Tower (Rishon LeZion)**: "38 fl | Approved". There's no Rishon row by this name (the "Metro Tower" in our data is the Ramat Gan one, 211).
+  - **CBD, Ayalon Business District**: "10X 30-40 fl | Approved". This is a range-only masterplan, with the same schema question as Shlomo Sixt / Ha'Argazim.
+- Proposed change: locate each project's own thread before adding anything.
+- Evidence: search summary of the [Tel Aviv projects index thread](https://www.skyscrapercity.com/threads/tel-aviv-projects-construction.191875/page-116).
+- Confidence: low.
+- Found: 2026-10-25
+
+## Checked this run, no change needed — for the record (2026-10-25)
+- **W Prime** (753, 150m/46fl) vs **W-Tower** (806, 156m/46fl): separate sibling towers in Park Tzameret (Canada-Israel), not a duplicate. Sources give W Prime's height as anywhere from 150m to 158m.
+- **Cosmopolitan 2 (Begin)** (588, 180m/45fl): title "40-45 fl | 180m | Prep". It's unclear whether that's one tower or two, so there's no entry. One poster notes that "180m" in these approvals may be height above sea level.
+- Status still matches the current title: HaRav Kokis Street VB (124, Planned; title 31fl, but a later edit says 36, matching our 36), Bass tower (219, Approved), Nitsba Tower (684, Approved), Britania Israel on the Park (320, Marketing; forum doubts the 58fl figure), Sonol Tower 2 (663, Approved; an LPC post says 41fl/180m ASL, consistent with 156m), Matzlawi Elite Office Tower (260, Approved), Dimri Bavli Tower (707, Prop; a commenter says 38fl, not 41).
+- No thread surfaced: Menivim Tower (678), Sifolux Tower (538), Toha Residential (573).
+- Url-backfill opportunity: "6 Sha'ul HaMelekh | 40 FL | Prop" ([thread](https://www.skyscrapercity.com/threads/tel-aviv-6-shaul-hamelekh-40-fl-prop.2432164/)) matches row 584 (40fl, Proposed, no url).
+- Found: 2026-10-25
