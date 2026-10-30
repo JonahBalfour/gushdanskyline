@@ -668,7 +668,7 @@ const RAW_DATA = [
 {id:582,name:"HaTayasim HaHagana EB",city:"Tel Aviv",height:null,floors:9,status:"Proposed",lat:32.09306,lng:34.76984},
 {id:583,name:"Arlozorov Young Towers (Tower 2)",city:"Tel Aviv",height:150.0,floors:41,status:"Completed",url:"https://www.skyscrapercity.com/threads/tel-aviv-arlozorov-young-towers-170m-150m-47-41-fl-completed.1586948/",lat:32.08444,lng:34.80028},
 {id:800,name:"Arlozorov Young Towers (Tower 1)",city:"Tel Aviv",height:170.0,floors:47,status:"Completed",url:"https://www.skyscrapercity.com/threads/tel-aviv-arlozorov-young-towers-170m-150m-47-41-fl-completed.1586948/",lat:32.08444,lng:34.80028},
-{id:584,name:"6 Sha\'ul HaMelekh",city:"Tel Aviv",height:null,floors:40,status:"Proposed",lat:32.07582,lng:34.78071},
+{id:584,name:"6 Sha\'ul HaMelekh",city:"Tel Aviv",height:null,floors:40,status:"Proposed",url:"https://www.skyscrapercity.com/threads/tel-aviv-6-shaul-hamelekh-40-fl-prop.2432164/",lat:32.07582,lng:34.78071},
 {id:585,name:"H Shadal Tower",city:"Tel Aviv",height:null,floors:40,status:"On Hold",url:"https://www.skyscrapercity.com/threads/tel-aviv-h-shadal-tower-m-40-fl-on-hold.1587464/",lat:32.0672,lng:34.76115},
 {id:586,name:"Tel-Aviv",city:"Tel Aviv",height:183.0,floors:50,status:"Completed",lat:32.10858,lng:34.79158},
 {id:587,name:"Alpha Tower",city:"Tel Aviv",height:null,floors:32,status:"Completed",url:"https://www.skyscrapercity.com/threads/tel-aviv-alpha-tower-32-fl-completed.1769393/",lat:32.09996,lng:34.77202},
